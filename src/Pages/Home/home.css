@@ -1,0 +1,209 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  margin-top: 5vh;
+}
+
+.welcome-text h1 {
+  text-align: center;
+  font-size: 3vw;
+  margin-bottom: 5vh;
+  color: #0ff;
+  text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff, 0 0 40px #0ff;
+  margin-top: 5vh;
+}
+
+.welcome-title h1 {
+  text-align: center;
+  font-size: 2vw;
+  margin-bottom: 2.5vh;
+  color: #fff;
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff;
+  cursor: pointer;
+}
+
+.welcome-title .menu img {
+  width: 10vw;
+  height: auto;
+}
+
+.welcome-title .part-char {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.welcome-title .part-char img {
+  width: 10vw;
+  height: auto;
+}
+
+.welcome-title .part-char img {
+  width: 20vw;
+  height: auto;
+}
+
+.part-char {
+  margin-bottom: 5vh;
+}
+
+.comics-images img {
+  margin: 0 1vw;
+}
+
+.home-char {
+  cursor: pointer;
+}
+
+.welcome-title .part-char img {
+  width: 10vw;
+  height: 10vw;
+  object-fit: cover;
+}
+
+.comics-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.comics-images img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 800px) {
+  .comics-images img {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .comics-images img {
+    width: 100px;
+    height: 100px;
+  }
+}
+@keyframes idleAnimation {
+  0% {
+    /* les styles à 0% */
+  }
+  100% {
+    /* les styles à 100% */
+  }
+}
+
+.HomePage.idle {
+  animation: idleAnimation 1s infinite;
+}
+@keyframes rainbow {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(-360deg);
+  }
+}
+
+.home-char img {
+  transition: transform 0.3s ease;
+}
+
+.home-char img:hover {
+  transform: scale(
+    1.05
+  ); /* zoom sur l'image lors du survol pour tous les navigateurs */
+  animation: rainbow 2s linear infinite; /* effet d'arc-en-ciel pour les navigateurs compatibles */
+}
+@keyframes rainbow {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(-360deg);
+  }
+}
+
+.home-char img,
+.part-comic img {
+  transition: transform 0.3s ease;
+}
+
+.home-char img:hover,
+.part-comic img:hover {
+  transform: scale(1.05);
+  animation: rainbow 2s linear infinite;
+}
+
+.carousel-image {
+  border: 2px solid #000;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.carousel-image:hover {
+  transform: scale(1.05);
+  animation: rainbow 2s linear infinite;
+}
+
+@keyframes rainbow {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(-360deg);
+  }
+}
+
+@keyframes background-animation {
+  0% {
+    background-color: #ff0000;
+  }
+  25% {
+    background-color: #00ff00;
+  }
+  50% {
+    background-color: #0000ff;
+  }
+  75% {
+    background-color: #ff00ff;
+  }
+  100% {
+    background-color: #ff0000;
+  }
+}
+
+body {
+  animation: background-animation 10s infinite;
+}
+
+@keyframes rainbow {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(-360deg);
+  }
+}
+
+@keyframes haloAnimation {
+  0% {
+    box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0ff, 0 0 20px #0ff,
+      0 0 25px #0ff, 0 0 30px rgb(132, 255, 0), 0 0 35px #0ff;
+  }
+  100% {
+    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #0ff, 0 0 40px #0ff,
+      0 0 50px rgb(0, 102, 255), 0 0 60px rgb(217, 0, 255), 0 0 70px #0ff;
+  }
+}
+
+.home-char img,
+.carousel-image {
+  animation: haloAnimation 1.5s alternate infinite;
+}
