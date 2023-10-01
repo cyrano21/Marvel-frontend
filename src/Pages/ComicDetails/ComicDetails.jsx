@@ -2,7 +2,8 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./comicDetails.css";
-const baseURL = process.env.REACT_APP_API_BASE_URL || "http://localhost:3000";
+const baseURL = process.env.REACT_APP_BACKEND_URL || "http://localhost:3000";
+
 export default function ComicDetails() {
   const [loading, setLoading] = useState(true);
   const [comic, setComic] = useState(null);
