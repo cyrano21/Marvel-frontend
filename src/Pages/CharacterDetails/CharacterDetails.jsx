@@ -2,7 +2,8 @@ import "./CharacterDetails.css";
 import axios from "axios";
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-const baseURL = process.env.REACT_APP_API_BASE_URL || "http://localhost:3000";
+const baseURL = process.env.REACT_APP_BACKEND_URL || "http://localhost:3000";
+
 export default function CharacterDetails() {
   const [loading, setLoading] = useState(true);
   const [item, setItem] = useState([]);
