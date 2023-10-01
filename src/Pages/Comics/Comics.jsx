@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import SearchBar from "../../components/Search/SearchBar";
+const baseURL = process.env.REACT_APP_API_BASE_URL || "http://localhost:3000";
 
 const Comics = () => {
   const [comics, setComics] = useState([]);
@@ -55,9 +56,7 @@ const Comics = () => {
       try {
         setLoading(true);
         const response = await axios.get(
-          `http://localhost:3000/comics?limit=${limit}&skip=${
-            (currentPage - 1) * limit
-          }`
+          `${baseURL}/comics?limit=${limit}&skip=${(currentPage - 1) * limit}`
         );
         setComics(response.data.results);
       } catch (error) {

@@ -207,3 +207,8 @@ body {
 .carousel-image {
   animation: haloAnimation 1.5s alternate infinite;
 }
+
+/* .responsive-image {
+  max-width: 100%;
+  height: auto;
+} */

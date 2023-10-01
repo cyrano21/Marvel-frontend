@@ -2,7 +2,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./comicDetails.css";
-
+const baseURL = process.env.REACT_APP_API_BASE_URL || "http://localhost:3000";
 export default function ComicDetails() {
   const [loading, setLoading] = useState(true);
   const [comic, setComic] = useState(null);
@@ -11,13 +11,13 @@ export default function ComicDetails() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          `http://localhost:3000/comic/${comicId}`
-        );
+        setLoading(true);
+        const response = await axios.get(`${baseURL}/comic/${comicId}`);
         setComic(response.data);
-        setLoading(false);
       } catch (err) {
         console.error("An error occurred:", err);
+      } finally {
+        setLoading(false);
       }
     };
     fetchData();
@@ -35,6 +35,7 @@ export default function ComicDetails() {
         <img
           src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
           alt={comic.title}
+          className="responsive-image"
         />
         <p>
           <span>Description:</span> <br />

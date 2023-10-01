@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Carousel from "react-elastic-carousel";
 import { useNavigate } from "react-router-dom";
+const baseURL = process.env.REACT_APP_API_BASE_URL || "http://localhost:3000";
 
 export default function Home() {
   const [characters, setCharacters] = useState([]);
@@ -11,12 +12,12 @@ export default function Home() {
 
   useEffect(() => {
     const fetchCharacters = async () => {
-      const response = await axios.get("http://localhost:3000/characters");
+      const response = await axios.get(`${baseURL}/characters`);
       setCharacters(response.data.results);
     };
 
     const fetchComics = async () => {
-      const response = await axios.get("http://localhost:3000/comics");
+      const response = await axios.get(`${baseURL}/comics`);
       setComics(response.data.results);
     };
 
@@ -52,6 +53,7 @@ export default function Home() {
                   src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
                   alt={character.name}
                   style={{ border: "2px solid #000" }}
+                  className="responsive-image"
                 />
               </div>
             ))}
@@ -76,10 +78,11 @@ export default function Home() {
             {comics.map((comic) => (
               <img
                 key={comic.id}
-                className="carousel-image"
+                // className="carousel-image"
                 src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
                 alt={comic.title}
                 onClick={() => navigate(`/comic/${comic._id}`)}
+                className="responsive-image"
               />
             ))}
           </Carousel>
