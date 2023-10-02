@@ -3,8 +3,12 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Carousel from "react-elastic-carousel";
 import { useNavigate } from "react-router-dom";
+<<<<<<< HEAD
 // const baseURL = process.env.REACT_APP_API_BASE_URL || "http://localhost:3000";
 // const baseURL = BASE_URL || "http://localhost:3000";
+=======
+const baseURL = process.env.REACT_APP_BACKEND_URL || "http://localhost:3000";
+>>>>>>> 541021ceedca4963ab41d3a9945a550f07d1953d
 
 export default function Home() {
   const [characters, setCharacters] = useState([]);
