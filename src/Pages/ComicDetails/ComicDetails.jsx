@@ -2,7 +2,6 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./comicDetails.css";
-const baseURL = process.env.REACT_APP_BACKEND_URL || "http://localhost:3000";
 
 export default function ComicDetails() {
   const [loading, setLoading] = useState(true);
@@ -13,7 +12,9 @@ export default function ComicDetails() {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(`${baseURL}/comic/${comicId}`);
+        const response = await axios.get(
+          `https://site--marvel-backend--cl5kfjmsrksj.code.run/comic/${comicId}`
+        );
         setComic(response.data);
       } catch (err) {
         console.error("An error occurred:", err);

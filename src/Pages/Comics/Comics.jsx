@@ -4,8 +4,6 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import SearchBar from "../../components/Search/SearchBar";
 
-const baseURL = process.env.REACT_APP_BACKEND_URL || "http://localhost:3000";
-
 const Comics = () => {
   const [comics, setComics] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -57,7 +55,9 @@ const Comics = () => {
       try {
         setLoading(true);
         const response = await axios.get(
-          `${baseURL}/comics?limit=${limit}&skip=${(currentPage - 1) * limit}`
+          `https://site--marvel-backend--cl5kfjmsrksj.code.run/comics?limit=${limit}&skip=${
+            (currentPage - 1) * limit
+          }`
         );
         setComics(response.data.results);
       } catch (error) {

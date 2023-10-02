@@ -4,7 +4,6 @@ import "./characters.css";
 import { useNavigate } from "react-router-dom";
 import SearchBar from "../../components/Search/SearchBar";
 import { Link } from "react-router-dom";
-const baseURL = process.env.REACT_APP_BACKEND_URL || "http://localhost:3000";
 
 export default function Characters() {
   const [characters, setCharacters] = useState([]);
@@ -44,7 +43,7 @@ export default function Characters() {
         if (searchTerm) {
           filters += `&name=${searchTerm}`;
         }
-        const url = `${baseURL}/characters${filters}`;
+        const url = `https://site--marvel-backend--cl5kfjmsrksj.code.run/characters${filters}`;
         console.log("Fetching data from:", url);
         const response = await axios.get(url);
 

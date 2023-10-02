@@ -3,7 +3,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Carousel from "react-elastic-carousel";
 import { useNavigate } from "react-router-dom";
-const baseURL = process.env.REACT_APP_API_BASE_URL || "http://localhost:3000";
+// const baseURL = process.env.REACT_APP_API_BASE_URL || "http://localhost:3000";
+// const baseURL = BASE_URL || "http://localhost:3000";
 
 export default function Home() {
   const [characters, setCharacters] = useState([]);
@@ -12,12 +13,16 @@ export default function Home() {
 
   useEffect(() => {
     const fetchCharacters = async () => {
-      const response = await axios.get(`${baseURL}/characters`);
+      const response = await axios.get(
+        "https://site--marvel-backend--cl5kfjmsrksj.code.run/characters"
+      );
       setCharacters(response.data.results);
     };
 
     const fetchComics = async () => {
-      const response = await axios.get(`${baseURL}/comics`);
+      const response = await axios.get(
+        "https://site--marvel-backend--cl5kfjmsrksj.code.run/comics"
+      );
       setComics(response.data.results);
     };
 
