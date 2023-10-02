@@ -3,7 +3,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import SearchBar from "../../components/Search/SearchBar";
-const baseURL = process.env.REACT_APP_API_BASE_URL || "http://localhost:3000";
+
+const baseURL = process.env.REACT_APP_BACKEND_URL || "http://localhost:3000";
 
 const Comics = () => {
   const [comics, setComics] = useState([]);

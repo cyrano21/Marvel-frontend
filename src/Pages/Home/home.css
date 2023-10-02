@@ -208,7 +208,7 @@ body {
   animation: haloAnimation 1.5s alternate infinite;
 }
 
-/* .responsive-image {
+.responsive-image {
   max-width: 100%;
   height: auto;
-} */
+}

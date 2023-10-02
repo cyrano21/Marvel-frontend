@@ -1,0 +1,17 @@
+[33mcommit 94e937f7c5ae88721f0f3f17292847d7451edcfa[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: Nkeng hiag louis olivier <louiscyrano@gmail.com>
+Date:   Sun Oct 1 22:22:22 2023 +0200
+
+    Mise à jour de l'application
+
+[33mcommit 7f9fb51314bf2d7afe607bc1dc73c7a7338d7aa1[m
+Author: Nkeng hiag louis olivier <louiscyrano@gmail.com>
+Date:   Sat Sep 30 21:15:57 2023 +0200
+
+    Corrigé la casse ./CharacterDetails.css
+
+[33mcommit cbbbf97825e3d717eea4e2e441f845c856a43ccb[m
+Author: Nkeng hiag louis olivier <louiscyrano@gmail.com>
+Date:   Sat Sep 30 21:02:19 2023 +0200
+
+    Corrigé les erreurs de build
