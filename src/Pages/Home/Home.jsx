@@ -44,7 +44,7 @@ export default function Home() {
           >
             Characters
           </h1>
-          <Carousel itemsToShow={5} enableAutoPlay autoPlaySpeed={5000}>
+          <Carousel itemsToShow={4} enableAutoPlay autoPlaySpeed={5000}>
             {characters.map((character) => (
               <div
                 key={character._id}
@@ -79,14 +79,19 @@ export default function Home() {
             autoPlaySpeed={10000}
           >
             {comics.map((comic) => (
-              <img
-                key={comic.id}
-                // className="carousel-image"
-                src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
-                alt={comic.title}
+              <div
+                key={comic._id}
+                className="home-comic"
                 onClick={() => navigate(`/comic/${comic._id}`)}
-                className="responsive-image"
-              />
+              >
+                <p>{comic.title}</p>
+                <img
+                  src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
+                  alt={comic.title}
+                  style={{ border: "2px solid #000" }}
+                  className="responsive-image"
+                />
+              </div>
             ))}
           </Carousel>
         </div>

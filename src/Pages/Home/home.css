@@ -1,4 +1,4 @@
-body,
+/* body,
 html {
   height: 100%;
   margin: 0;
@@ -52,6 +52,9 @@ main {
 .part-char {
   margin-bottom: 5vh;
 }
+.part-comic {
+  margin-top: 230px;
+}
 
 .comics-images img {
   width: 15vw;
@@ -60,6 +63,11 @@ main {
 
 .home-char {
   cursor: pointer;
+  gap: 20px;
+}
+
+.home-char p .home-comic p {
+  margin-top: 60px;
 }
 
 .welcome-title .part-char img {
@@ -82,7 +90,7 @@ main {
 
 @media screen and (max-width: 800px) {
   .welcome-text h1 {
-    font-size: 4vw;
+    font-size: 5vw;
   }
 
   .welcome-title h1 {
@@ -92,6 +100,10 @@ main {
   .welcome-title .menu img,
   .welcome-title .part-char img {
     width: 30vw;
+  }
+
+  .welcome-title h1 {
+    font-size: 8vw;
   }
 
   .home-char img {
@@ -105,10 +117,8 @@ main {
 }
 @keyframes idleAnimation {
   0% {
-    /* les styles à 0% */
   }
   100% {
-    /* les styles à 100% */
   }
 }
 
@@ -129,10 +139,8 @@ main {
 }
 
 .home-char img:hover {
-  transform: scale(
-    1.05
-  ); /* zoom sur l'image lors du survol pour tous les navigateurs */
-  animation: rainbow 2s linear infinite; /* effet d'arc-en-ciel pour les navigateurs compatibles */
+  transform: scale(1.05);
+  animation: rainbow 2s linear infinite;
 }
 @keyframes rainbow {
   0% {
@@ -223,4 +231,119 @@ body {
 .responsive-image {
   max-width: 100%;
   height: auto;
+} */
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  margin-top: 5vh;
+}
+
+.welcome-text h1 {
+  text-align: center;
+  font-size: 3vw;
+  margin-bottom: 5vh;
+  color: #0ff;
+  text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff, 0 0 40px #0ff;
+  margin-top: 5vh;
+}
+
+.welcome-title h1 {
+  text-align: center;
+  font-size: 2vw;
+  margin-bottom: 2.5vh;
+  color: #fff;
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff;
+  cursor: pointer;
+}
+
+.home-char {
+  cursor: pointer;
+  margin-right: 40px;
+  margin-left: 40px;
+  margin-bottom: 30px;
+}
+
+/* Ajout d’une marge en bas pour éviter le halo */
+.home-char p,
+.home-comic p {
+  margin-top: 60px;
+  margin-bottom: 10px; /* Pour éviter que le halo ne chevauche le texte */
+}
+
+/* Réglages de responsive design */
+@media screen and (max-width: 800px) {
+  .welcome-text h1 {
+    font-size: 5vw;
+  }
+
+  .welcome-title h1 {
+    font-size: 4vw;
+  }
+
+  .home-char img {
+    width: 50vw;
+    gap: 10px;
+  }
+
+  .home-char p,
+  .home-comic p {
+    margin-top: 20px; /* ajuster la marge supérieure pour les écrans plus petits */
+    font-size: 4vw; /* ajuster la taille de la police pour les écrans plus petits */
+  }
+
+  .comics-images img {
+    width: 30vw;
+  }
+}
+
+.home-char img,
+.home-comic img,
+.carousel-image {
+  transition: transform 0.3s ease;
+}
+
+.home-char img:hover,
+.home-comic img:hover,
+.carousel-image:hover {
+  transform: scale(1.05);
+  animation: rainbow 2s linear infinite;
+}
+
+.part-char {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 50px;
+}
+
+@keyframes rainbow {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(-360deg);
+  }
+}
+
+@keyframes haloAnimation {
+  0% {
+    box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0ff, 0 0 20px #0ff,
+      0 0 25px #0ff, 0 0 30px rgb(132, 255, 0), 0 0 35px #0ff;
+  }
+  100% {
+    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #0ff, 0 0 40px #0ff,
+      0 0 50px rgb(0, 102, 255), 0 0 60px rgb(217, 0, 255), 0 0 70px #0ff;
+  }
+}
+
+.home-char img,
+.home-comic img,
+.carousel-image {
+  animation: haloAnimation 1.5s alternate infinite;
 }

@@ -2,6 +2,8 @@ import "./header.css";
 import logo from "../../assets/img/marvel-logo.png";
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+// import ModalConnection from "./ModalConnection";
+// import ModalInscription from "./ModalInscription";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
