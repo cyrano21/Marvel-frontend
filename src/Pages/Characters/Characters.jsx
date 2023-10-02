@@ -43,7 +43,9 @@ export default function Characters() {
         if (searchTerm) {
           filters += `&name=${searchTerm}`;
         }
+
         const url = `https://site--marvel-backend--cl5kfjmsrksj.code.run/characters${filters}`;
+
         console.log("Fetching data from:", url);
         const response = await axios.get(url);
 
