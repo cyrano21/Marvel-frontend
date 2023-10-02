@@ -56,7 +56,7 @@ export default function Header() {
 
   return (
     <header className={`center ${scrolled ? "header-scrolled" : ""}`}>
-      <div>
+      <div className="log">
         <img
           src={logo}
           alt="logo"
@@ -66,6 +66,11 @@ export default function Header() {
       </div>
 
       <div className="line">
+        <div className="customer">
+          <button onClick={() => setShowLoginModal(true)}>Login</button>
+          <button onClick={() => setShowSignUpModal(true)}>Signup</button>
+        </div>
+
         <nav>
           <Link className="characters" to="/characters">
             Characters
@@ -77,11 +82,6 @@ export default function Header() {
             Favorites
           </Link>
         </nav>
-
-        <div className="customer">
-          <button onClick={() => setShowLoginModal(true)}>Login</button>
-          <button onClick={() => setShowSignUpModal(true)}>Signup</button>
-        </div>
       </div>
 
       <div className="search">{/* <SearchBarHeader /> */}</div>

@@ -176,14 +176,24 @@ button:hover {
   /* Ajustez la disposition et le style des éléments du menu */
   .line {
     flex-direction: column;
-    gap: 10px; /* Ajoutez de l'espace entre les éléments du menu */
+    gap: 20px; /* Ajoutez de l'espace entre les éléments du menu */
   }
 
+  .customer {
+    flex-direction: row-reverse;
+  }
   .characters,
   .comics,
   .favorites {
     text-align: center; /* Centrez le texte des éléments du menu */
     font-size: 18px; /* Réduisez la taille de la police */
+  }
+  header .logo {
+    width: 70%;
+  }
+
+  header .log {
+    width: 30%;
   }
 }
 
