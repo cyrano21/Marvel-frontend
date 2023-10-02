@@ -27,7 +27,8 @@ main {
   cursor: pointer;
 }
 
-.welcome-title .menu img {
+.welcome-title .menu img,
+.welcome-title .part-char img {
   width: 10vw;
   height: auto;
 }
@@ -53,7 +54,8 @@ main {
 }
 
 .comics-images img {
-  margin: 0 1vw;
+  width: 15vw;
+  height: auto;
 }
 
 .home-char {
@@ -73,22 +75,32 @@ main {
 }
 
 .comics-images img {
-  width: 200px;
-  height: 200px;
+  width: 15vh;
+  height: auto;
   object-fit: cover;
 }
 
 @media screen and (max-width: 800px) {
-  .comics-images img {
-    width: 150px;
-    height: 150px;
+  .welcome-text h1 {
+    font-size: 4vw;
   }
-}
 
-@media screen and (max-width: 600px) {
+  .welcome-title h1 {
+    font-size: 4vw;
+  }
+
+  .welcome-title .menu img,
+  .welcome-title .part-char img {
+    width: 30vw;
+  }
+
+  .home-char img {
+    width: 50vw;
+    gap: 10px;
+  }
+
   .comics-images img {
-    width: 100px;
-    height: 100px;
+    width: 30vw;
   }
 }
 @keyframes idleAnimation {

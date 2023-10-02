@@ -159,9 +159,50 @@ button:hover {
   background-color: #e2e6ea;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 800px) {
   .center {
     height: 80px;
     padding: 5px 10px;
+  }
+
+  .center {
+    overflow-x: hidden;
+  }
+
+  header {
+    width: 100%;
+  }
+
+  /* Ajustez la disposition et le style des éléments du menu */
+  .line {
+    flex-direction: column;
+    gap: 10px; /* Ajoutez de l'espace entre les éléments du menu */
+  }
+
+  .characters,
+  .comics,
+  .favorites {
+    text-align: center; /* Centrez le texte des éléments du menu */
+    font-size: 18px; /* Réduisez la taille de la police */
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .center {
+    height: 80px;
+    padding: 5px 10px;
+  }
+  .center {
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+  header {
+    padding: 15px;
+  }
+
+  .line {
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px;
   }
 }
