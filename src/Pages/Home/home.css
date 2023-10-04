@@ -244,57 +244,203 @@ main {
   margin-top: 5vh;
 }
 
-.welcome-text h1 {
+.welcome-text h1,
+.welcome-title h1 {
   text-align: center;
+  margin-top: 5vh;
+  cursor: pointer;
+}
+
+.welcome-text h1 {
   font-size: 3vw;
   margin-bottom: 5vh;
   color: #0ff;
   text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff, 0 0 40px #0ff;
-  margin-top: 5vh;
 }
 
 .welcome-title h1 {
-  text-align: center;
   font-size: 2vw;
   margin-bottom: 2.5vh;
   color: #fff;
   text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff;
-  cursor: pointer;
 }
 
-.home-char {
-  cursor: pointer;
-  margin-right: 40px;
-  margin-left: 40px;
-  margin-bottom: 30px;
+.p-title {
+  background-color: red;
+  width: 200px;
+  height: 50px;
+  margin-bottom: 35px;
+  /* text-align: center; */
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* overflow: hidden; */
 }
 
-/* Ajout d’une marge en bas pour éviter le halo */
+/* .p-title p, */
+.img-title .description {
+  padding: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.p-title p {
+  font-weight: bold;
+
+  font-size: 20px;
+  text-align: center;
+}
+
+.img-title {
+  width: 100%;
+  height: 25vh;
+  background-color: aliceblue;
+  border: 2px solid red;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
+  position: relative;
+  /* gap: 100px; */
+}
+
+.img-title img {
+  max-width: 90%;
+  height: 30vh;
+  object-fit: cover;
+  display: block;
+  margin: 10px auto;
+}
+
+.img-title .description {
+  color: #333;
+  text-align: center;
+  max-width: 90%;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 60px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  white-space: nowrap;
+}
+
+.home-char,
+.home-comic {
+  margin: 0 20px;
+}
+
 .home-char p,
 .home-comic p {
   margin-top: 60px;
-  margin-bottom: 10px; /* Pour éviter que le halo ne chevauche le texte */
+  margin-bottom: 10px;
 }
 
-/* Réglages de responsive design */
-@media screen and (max-width: 800px) {
+@media (max-width: 715px) {
   .welcome-text h1 {
-    font-size: 5vw;
+    line-height: 3;
+    padding: 5px 0;
+    margin-top: 50px;
+    text-align: center;
+    font-size: 4rem;
   }
 
   .welcome-title h1 {
-    font-size: 4vw;
+    font-size: 4rem;
   }
 
+  .home-char {
+    width: 100%;
+  }
+
+  .home-char img .part-char,
+  .part-comic {
+    margin-top: 20px;
+  }
+
+  .img-title img {
+    max-width: 100%;
+    height: 10vh;
+    object-fit: cover;
+    display: block;
+    margin: 0px auto;
+  }
+
+  .home-comic p {
+    margin: 20px;
+    font-size: 2vw;
+  }
+
+  .home-char p {
+    font-size: 10px;
+  }
+
+  .img-title {
+    gap: 20px;
+    width: 100%;
+    height: 20vh;
+  }
+
+  .description {
+    font-size: 0.8rem;
+    padding: 10px;
+    max-height: 6rem;
+    white-space: normal;
+  }
+
+  .home-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    margin: 20px 0;
+  }
+
+  .part-char,
+  .part-comic {
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .welcome-text h1 {
+    font-size: 2rem;
+    gap: 20px;
+  }
+
+  .welcome-title h1 {
+    font-size: 2.5rem;
+  }
+  .home-char {
+    gap: 40px;
+  }
+
+  .p-title {
+    gap: 20px;
+    width: 100%;
+    height: 6vh;
+  }
   .home-char img {
-    width: 50vw;
-    gap: 10px;
+    width: 45vw;
+    gap: 20px;
+  }
+
+  .img-title {
+    gap: 20 px;
+    width: 100%;
+    height: 20vh;
+    margin-bottom: 20px;
   }
 
   .home-char p,
   .home-comic p {
-    margin-top: 20px; /* ajuster la marge supérieure pour les écrans plus petits */
-    font-size: 4vw; /* ajuster la taille de la police pour les écrans plus petits */
+    margin: 20px;
+    font-size: 3vw;
+    text-align: center;
   }
 
   .comics-images img {
@@ -315,13 +461,6 @@ main {
   animation: rainbow 2s linear infinite;
 }
 
-.part-char {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  gap: 50px;
-}
-
 @keyframes rainbow {
   0% {
     filter: hue-rotate(0deg);
@@ -340,6 +479,13 @@ main {
     box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #0ff, 0 0 40px #0ff,
       0 0 50px rgb(0, 102, 255), 0 0 60px rgb(217, 0, 255), 0 0 70px #0ff;
   }
+}
+
+.part-char {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 50px;
 }
 
 .home-char img,

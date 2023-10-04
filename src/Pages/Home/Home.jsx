@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 export default function Home() {
   const [characters, setCharacters] = useState([]);
   const [comics, setComics] = useState([]);
+  const [itemsToShow, setItemsToShow] = useState(5); // nouvel état pour le nombre d'items à afficher
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -26,6 +27,28 @@ export default function Home() {
 
     fetchCharacters();
     fetchComics();
+
+    // Nouvelle fonction pour mettre à jour le nombre d'items en fonction de la largeur de l'écran
+    const mettreAJourItemsToShow = () => {
+      if (window.innerWidth <= 480) {
+        setItemsToShow(1);
+      } else if (window.innerWidth <= 900) {
+        setItemsToShow(3);
+      } else if (window.innerWidth <= 1024) {
+        setItemsToShow(4);
+      } else {
+        setItemsToShow(5);
+      }
+    };
+
+    // Vérification initiale
+    mettreAJourItemsToShow();
+
+    // Écoute des événements de redimensionnement de la fenêtre
+    window.addEventListener("resize", mettreAJourItemsToShow);
+
+    // Supprimez l'écouteur lorsque le composant est démonté
+    return () => window.removeEventListener("resize", mettreAJourItemsToShow);
   }, []);
 
   return (
@@ -44,20 +67,36 @@ export default function Home() {
           >
             Characters
           </h1>
-          <Carousel itemsToShow={4} enableAutoPlay autoPlaySpeed={5000}>
+          <Carousel
+            itemsToShow={itemsToShow}
+            enableAutoPlay
+            autoPlaySpeed={5000}
+          >
             {characters.map((character) => (
               <div
                 key={character._id}
                 className="home-char"
                 onClick={() => navigate(`/character/${character._id}`)}
               >
-                <p>{character.name}</p>
-                <img
-                  src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
-                  alt={character.name}
-                  style={{ border: "2px solid #000" }}
-                  className="responsive-image"
-                />
+                <div className="p-title">
+                  <p>{character.name}</p>
+                </div>
+
+                <div className="img-title">
+                  <img
+                    src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
+                    alt={character.name}
+                    style={{ border: "2px solid #000" }}
+                    className="responsive-image"
+                  />
+
+                  <div className="img-title-text">
+                    {character.description && (
+                      <span className="description-title">Description:</span>
+                    )}
+                    <p className="description">{character.description}</p>
+                  </div>
+                </div>
               </div>
             ))}
           </Carousel>
@@ -84,7 +123,10 @@ export default function Home() {
                 className="home-comic"
                 onClick={() => navigate(`/comic/${comic._id}`)}
               >
-                <p>{comic.title}</p>
+                <div className="p-title">
+                  <p>{comic.title}</p>
+                </div>
+
                 <img
                   src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
                   alt={comic.title}

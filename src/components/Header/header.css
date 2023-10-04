@@ -88,6 +88,10 @@ button:hover {
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
   z-index: 999;
+  display: none; /* Par défaut, caché */
+}
+.modal-overlay.active {
+  display: block; /* Affiché quand il est actif */
 }
 
 .modal {
@@ -100,12 +104,17 @@ button:hover {
   max-width: 500px;
   padding: 20px;
   background-color: #fff;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
+  background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+  border: 1px solid #fff;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  display: none; /* Par défaut, caché */
 }
 
 .modal h2 {
   margin-bottom: 15px;
+  color: #fff;
+  font-family: "Arial", sans-serif;
 }
 
 .modal form {
@@ -136,18 +145,20 @@ button:hover {
 }
 
 .modal button[type="submit"] {
-  background-color: #007bff;
+  /* background-color: #007bff; */
   color: #fff;
+  background-image: linear-gradient(to right, #6a11cb, #2575fc);
 }
 
 .modal button[type="button"] {
-  background-color: #f8f9fa;
+  /* background-color: #f8f9fa; */
   color: #333;
   margin-left: 10px;
+  background-color: #f1f1f1;
 }
 
 .modal button:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
 .modal button[type="submit"]:hover {
@@ -156,6 +167,12 @@ button:hover {
 
 .modal button[type="button"]:hover {
   background-color: #e2e6ea;
+}
+
+.modal.active {
+  display: block; /* Lorsque .active est ajouté, le modal devient visible */
+  /* opacity: 1;
+  transform: translate(-50%, -50%); */
 }
 
 @media screen and (max-width: 600px) {
@@ -175,6 +192,9 @@ button:hover {
     flex-direction: column;
     gap: 10px;
     margin: 10px;
+  }
+  .modal {
+    width: 90%;
   }
 }
 
