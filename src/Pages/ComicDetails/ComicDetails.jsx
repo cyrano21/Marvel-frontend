@@ -2,11 +2,12 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./comicDetails.css";
-
+import { useNavigate } from "react-router-dom";
 export default function ComicDetails() {
   const [loading, setLoading] = useState(true);
   const [comic, setComic] = useState(null);
   const { comicId } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -29,6 +30,9 @@ export default function ComicDetails() {
     <span>Loading...</span>
   ) : (
     <main className="ComicDetails">
+      <button className="return-home" onClick={() => navigate("/")}>
+        Home
+      </button>
       <div>
         <h1>
           <span>Title:</span> <br />

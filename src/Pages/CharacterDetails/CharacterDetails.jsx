@@ -2,11 +2,12 @@ import "./CharacterDetails.css";
 import axios from "axios";
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 export default function CharacterDetails() {
   const [loading, setLoading] = useState(true);
   const [item, setItem] = useState([]);
   const { characterId } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -27,6 +28,10 @@ export default function CharacterDetails() {
     <span>loading...</span>
   ) : (
     <main className="CharacterDetails">
+      <button className="return-home" onClick={() => navigate("/")}>
+        Home
+      </button>
+
       <div className="text">
         <span>
           <p> Name :</p> {item.name}
@@ -80,7 +85,7 @@ export default function CharacterDetails() {
               </div>
             ))
           ) : (
-            <p>No comics available for this character.</p>
+            <p>Pas de comics associés à ce personnage.</p>
           )}
         </div>
       </div>
