@@ -1,238 +1,3 @@
-/* body,
-html {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-main {
-  margin-top: 5vh;
-}
-
-.welcome-text h1 {
-  text-align: center;
-  font-size: 3vw;
-  margin-bottom: 5vh;
-  color: #0ff;
-  text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff, 0 0 40px #0ff;
-  margin-top: 5vh;
-}
-
-.welcome-title h1 {
-  text-align: center;
-  font-size: 2vw;
-  margin-bottom: 2.5vh;
-  color: #fff;
-  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff;
-  cursor: pointer;
-}
-
-.welcome-title .menu img,
-.welcome-title .part-char img {
-  width: 10vw;
-  height: auto;
-}
-
-.welcome-title .part-char {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.welcome-title .part-char img {
-  width: 10vw;
-  height: auto;
-}
-
-.welcome-title .part-char img {
-  width: 20vw;
-  height: auto;
-}
-
-.part-char {
-  margin-bottom: 5vh;
-}
-.part-comic {
-  margin-top: 230px;
-}
-
-.comics-images img {
-  width: 15vw;
-  height: auto;
-}
-
-.home-char {
-  cursor: pointer;
-  gap: 20px;
-}
-
-.home-char p .home-comic p {
-  margin-top: 60px;
-}
-
-.welcome-title .part-char img {
-  width: 10vw;
-  height: 10vw;
-  object-fit: cover;
-}
-
-.comics-images {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.comics-images img {
-  width: 15vh;
-  height: auto;
-  object-fit: cover;
-}
-
-@media screen and (max-width: 800px) {
-  .welcome-text h1 {
-    font-size: 5vw;
-  }
-
-  .welcome-title h1 {
-    font-size: 4vw;
-  }
-
-  .welcome-title .menu img,
-  .welcome-title .part-char img {
-    width: 30vw;
-  }
-
-  .welcome-title h1 {
-    font-size: 8vw;
-  }
-
-  .home-char img {
-    width: 50vw;
-    gap: 10px;
-  }
-
-  .comics-images img {
-    width: 30vw;
-  }
-}
-@keyframes idleAnimation {
-  0% {
-  }
-  100% {
-  }
-}
-
-.HomePage.idle {
-  animation: idleAnimation 1s infinite;
-}
-@keyframes rainbow {
-  0% {
-    filter: hue-rotate(0deg);
-  }
-  100% {
-    filter: hue-rotate(-360deg);
-  }
-}
-
-.home-char img {
-  transition: transform 0.3s ease;
-}
-
-.home-char img:hover {
-  transform: scale(1.05);
-  animation: rainbow 2s linear infinite;
-}
-@keyframes rainbow {
-  0% {
-    filter: hue-rotate(0deg);
-  }
-  100% {
-    filter: hue-rotate(-360deg);
-  }
-}
-
-.home-char img,
-.part-comic img {
-  transition: transform 0.3s ease;
-}
-
-.home-char img:hover,
-.part-comic img:hover {
-  transform: scale(1.05);
-  animation: rainbow 2s linear infinite;
-}
-
-.carousel-image {
-  border: 2px solid #000;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-.carousel-image:hover {
-  transform: scale(1.05);
-  animation: rainbow 2s linear infinite;
-}
-
-@keyframes rainbow {
-  0% {
-    filter: hue-rotate(0deg);
-  }
-  100% {
-    filter: hue-rotate(-360deg);
-  }
-}
-
-@keyframes background-animation {
-  0% {
-    background-color: #ff0000;
-  }
-  25% {
-    background-color: #00ff00;
-  }
-  50% {
-    background-color: #0000ff;
-  }
-  75% {
-    background-color: #ff00ff;
-  }
-  100% {
-    background-color: #ff0000;
-  }
-}
-
-body {
-  animation: background-animation 10s infinite;
-}
-
-@keyframes rainbow {
-  0% {
-    filter: hue-rotate(0deg);
-  }
-  100% {
-    filter: hue-rotate(-360deg);
-  }
-}
-
-@keyframes haloAnimation {
-  0% {
-    box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0ff, 0 0 20px #0ff,
-      0 0 25px #0ff, 0 0 30px rgb(132, 255, 0), 0 0 35px #0ff;
-  }
-  100% {
-    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #0ff, 0 0 40px #0ff,
-      0 0 50px rgb(0, 102, 255), 0 0 60px rgb(217, 0, 255), 0 0 70px #0ff;
-  }
-}
-
-.home-char img,
-.carousel-image {
-  animation: haloAnimation 1.5s alternate infinite;
-}
-
-.responsive-image {
-  max-width: 100%;
-  height: auto;
-} */
-
 body,
 html {
   height: 100%;
@@ -303,6 +68,88 @@ main {
   }
 }
 
+.part-char {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 50px;
+  background-color: rgb(203, 191, 191);
+
+  background-image: url("../../assets/img/images/Lock-Screen-Marvel-GIF-Wallpaper.gif");
+  background-size: cover; /* Pour couvrir toute la surface de l'élément */
+  background-repeat: no-repeat; /* Pour éviter que le GIF ne se répète */
+  background-position: center center; /* Pour centrer l'image */
+
+  /* Dimensions de votre élément (modifiable selon vos besoins) */
+  width: 100%;
+  /* height: 400px; */
+}
+
+@keyframes mixedTransition {
+  /* Début: Image 1 avec un léger zoom */
+  0%,
+  20% {
+    background-image: url("../../assets/img/images/Lock-Screen-Marvel-GIF-Wallpaper.gif");
+    background-size: 100% 100%;
+  }
+
+  /* Transition vers Image 2 avec fondu et zoom */
+  20%,
+  25% {
+    background-image: url("../../assets/img/images/marvel\ gif.gif"),
+      url("../../assets/img/images/208646.gif");
+    background-size: 105% 105%, 100% 100%;
+  }
+  25%,
+  45% {
+    background-image: url("../../assets/img/images/Lock-Screen-Marvel-GIF-Wallpaper.gif");
+    background-size: 100% 100%;
+  }
+
+  /* Transition vers Image 3 avec fondu et zoom */
+  45%,
+  50% {
+    background-image: url("../../assets/img/wallpaperbetter.com_7680x4320 (2).jpg"),
+      url("../../assets/img/images/208646.gif");
+    background-size: 105% 105%, 100% 100%;
+  }
+  50%,
+  70% {
+    background-image: url("../../assets/img/images/208646.gif");
+    background-size: 100% 100%;
+  }
+
+  /* Transition vers Image 4 avec fondu et zoom */
+  70%,
+  75% {
+    background-image: url("../../assets/img/images/marvel\ gif.gif"),
+      url("../../assets/img/images/208646.gif");
+    background-size: 105% 105%, 100% 100%;
+  }
+  75%,
+  95% {
+    background-image: url("../../assets/img/images/Lock-Screen-Marvel-GIF-Wallpaper.gif");
+    background-size: 100% 100%;
+  }
+
+  /* Retour à l'Image 1 avec un léger zoom */
+  95%,
+  100% {
+    background-image: url("../../assets/img/marvel gif.gif"),
+      url("../../assets/img/images/208646.gif");
+    background-size: 105% 105%, 100% 100%;
+  }
+}
+
+.part-comic {
+  animation: mixedTransition 24s infinite;
+  background-image: url("../../assets/img/images/marvel gif.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  /* width: 100%; */
+}
+
 .p-title {
   background-color: red;
   width: 100%;
@@ -333,7 +180,7 @@ main {
 .img-title {
   width: 100%;
   height: 25vh;
-  background-color: aliceblue;
+  /* background-color: aliceblue; */
   border: 2px solid red;
   border-radius: 10px;
   display: flex;
@@ -379,6 +226,54 @@ main {
   
 }  */
 
+.carousel-container {
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+
+.carousel-image {
+  transform: rotateY(-60deg);
+  transition: transform 0.3s ease;
+}
+
+.carousel-image:hover {
+  transform: rotateY(-60deg) scale(1.05);
+}
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.slideInFromLeft {
+  animation: slideInFromLeft 1s forwards;
+}
+
+.slideInFromRight {
+  animation: slideInFromRight 1s forwards;
+}
+
+.slideInFromTop {
+  animation: slideInFromTop 1s forwards;
+}
+
+.slideInFromBottom {
+  animation: slideInFromBottom 1s forwards;
+}
+
 @media (max-width: 715px) {
   .welcome-text h1 {
     line-height: 3;
@@ -414,6 +309,11 @@ main {
     font-size: 2vw;
   }
 
+  .home-comic {
+    padding: 20px;
+    /* height: 100vh; */
+  }
+
   .home-char p {
     font-size: 10px;
   }
@@ -444,7 +344,7 @@ main {
 }
 
 .p-title {
-  width: 80px;
+  width: 100%;
   height: 50px;
   margin-bottom: 35px;
   /* text-align: center; */
@@ -534,14 +434,6 @@ main {
     box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #0ff, 0 0 40px #0ff,
       0 0 50px rgb(0, 102, 255), 0 0 60px rgb(217, 0, 255), 0 0 70px #0ff;
   }
-}
-
-.part-char {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  gap: 50px;
-  background-color: rgb(203, 191, 191);
 }
 
 .home-char img,
