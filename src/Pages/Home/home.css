@@ -249,6 +249,7 @@ main {
   text-align: center;
   margin-top: 5vh;
   cursor: pointer;
+  animation: zoomIn 1s forwards;
 }
 
 .welcome-text h1 {
@@ -288,6 +289,17 @@ main {
   }
   100% {
     transform: translateX(0);
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
   }
 }
 
@@ -362,11 +374,10 @@ main {
   margin: 0 20px;
 }
 
-.home-char p,
+/* .home-char p,
 .home-comic p {
-  /* margin-top: 60px; */
-  /* margin-bottom: 10px;
-} */
+  
+}  */
 
 @media (max-width: 715px) {
   .welcome-text h1 {
