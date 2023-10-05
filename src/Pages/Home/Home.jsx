@@ -52,9 +52,12 @@ export default function Home() {
   }, []);
 
   return (
-    <main style={{ marginTop: "120px" }}>
-      <div className="welcome-text" style={{ marginTop: "100px" }}>
-        <h1>WELCOME TO MARVEL HOME !</h1>
+    <main>
+      <div className="welcome-text">
+        <h1>
+          <p className="welcome">WELCOME TO MARVEL</p>
+          <p className="home">HOME !</p>
+        </h1>
       </div>
 
       <div className="welcome-title">
@@ -65,7 +68,7 @@ export default function Home() {
               navigate("/characters");
             }}
           >
-            Characters
+            PERSONNAGES
           </h1>
           <Carousel
             itemsToShow={itemsToShow}
@@ -109,7 +112,7 @@ export default function Home() {
               navigate("/comics");
             }}
           >
-            Comics
+            COMICS
           </h1>
           <Carousel
             itemsToShow={3}

@@ -18,30 +18,171 @@
   padding-top: 100px;
 }
 
-.header-scrolled {
-  background-color: rgba(0, 0, 0, 0.7);
+@keyframes mixedTransition {
+  /* Début: Image 1 avec un léger zoom */
+  0%,
+  20% {
+    background-image: url("/src/assets/img/wallpaperbetter.com_7680x4320 (1).jpg");
+    background-size: 100% 100%;
+  }
+
+  /* Transition vers Image 2 avec fondu et zoom */
+  20%,
+  25% {
+    background-image: url("/src/assets/img/wallpaperbetter.com_7680x4320 (1).jpg"),
+      url("/src/assets/img/wallpaperbetter.com_7680x4320 (2).jpg");
+    background-size: 105% 105%, 100% 100%;
+  }
+  25%,
+  45% {
+    background-image: url("/src/assets/img/wallpaperbetter.com_7680x4320 (2).jpg");
+    background-size: 100% 100%;
+  }
+
+  /* Transition vers Image 3 avec fondu et zoom */
+  45%,
+  50% {
+    background-image: url("/src/assets/img/wallpaperbetter.com_7680x4320 (2).jpg"),
+      url("/src/assets/img/wallpaperbetter.com_7680x4320.jpg");
+    background-size: 105% 105%, 100% 100%;
+  }
+  50%,
+  70% {
+    background-image: url("/src/assets/img/wallpaperbetter.com_7680x4320.jpg");
+    background-size: 100% 100%;
+  }
+
+  /* Transition vers Image 4 avec fondu et zoom */
+  70%,
+  75% {
+    background-image: url("/src/assets/img/wallpaperbetter.com_7680x4320.jpg"),
+      url("/src/assets/img/BGHeader.webp");
+    background-size: 105% 105%, 100% 100%;
+  }
+  75%,
+  95% {
+    background-image: url("/src/assets/img/BGHeader.webp");
+    background-size: 100% 100%;
+  }
+
+  /* Retour à l'Image 1 avec un léger zoom */
+  95%,
+  100% {
+    background-image: url("/src/assets/img/BGHeader.webp"),
+      url("/src/assets/img/wallpaperbetter.com_7680x4320 (1).jpg");
+    background-size: 105% 105%, 100% 100%;
+  }
 }
 
-header .logo {
-  cursor: pointer;
-  border-radius: 10%;
+.header {
+  display: flex;
+  position: relative;
+  background-color: white;
+  background-repeat: no-repeat;
+  animation: slide 20s infinite;
+  background-size: cover;
+  background-position: center;
+  object-fit: cover;
+  width: 100%;
+  height: 20vh;
+  animation: mixedTransition 24s infinite;
+}
+
+.header-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* Assurez-vous que l'image d'arrière-plan est en dessous du contenu de l'en-tête */
 }
 
 .line {
-  cursor: pointer;
   display: flex;
 
-  font-weight: 700;
-  font-size: 30px;
+  font-size: 2rem;
   justify-content: space-between;
-  gap: 20px;
+  /* gap: 20px; */
+  width: 100%;
+  align-items: center;
 }
 
-.characters:hover,
-.comics:hover,
-.favorites:hover {
+.customer {
+  display: flex;
+  gap: 15px;
+  /* width: 20%; */
+  align-items: start;
+  justify-content: space-around;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-bar img {
+  width: 20vw;
+}
+
+.navbar_logo {
+  /* width: 50%; */
+  height: 10%;
+}
+
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem;
+  background-color: black;
+  color: white;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.favorites {
+  color: #ec1c23;
+  background-color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+.navbar_links {
+  display: flex;
+}
+
+.navbar_link {
+  padding: 0 0.3rem;
+  color: inherit;
+}
+
+.navbar_link:hover {
   color: red;
   transform: scale(1.2);
+}
+
+.navbar_burger {
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  color: inherit;
+  display: none;
+  /* margin-right: 5px; */
 }
 
 .search {
@@ -50,33 +191,34 @@ header .logo {
   justify-content: center;
 }
 
-.characters,
+/* .characters,
 .comics,
 .favorites {
   transition: transform 0.3s ease;
   color: #fff;
   text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff;
-}
+} */
 
-nav {
+.header-bar {
+  width: 80%;
   display: flex;
-  gap: 30px;
+  align-items: center;
+  justify-content: space-around;
 }
 
-.customer {
-  display: flex;
-  gap: 15px;
-}
-
-button {
+.form {
   padding: 5px 15px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  color: white;
+  background-color: red;
+  font-weight: bold;
 }
 
-button:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+.form:hover {
+  background-color: black;
+  color: red;
 }
 
 /* Modal overlay */
@@ -88,10 +230,6 @@ button:hover {
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
   z-index: 999;
-  display: none; /* Par défaut, caché */
-}
-.modal-overlay.active {
-  display: block; /* Affiché quand il est actif */
 }
 
 .modal {
@@ -145,13 +283,11 @@ button:hover {
 }
 
 .modal button[type="submit"] {
-  /* background-color: #007bff; */
   color: #fff;
   background-image: linear-gradient(to right, #6a11cb, #2575fc);
 }
 
 .modal button[type="button"] {
-  /* background-color: #f8f9fa; */
   color: #333;
   margin-left: 10px;
   background-color: #f1f1f1;
@@ -161,57 +297,23 @@ button:hover {
   transform: scale(1.1);
 }
 
-.modal button[type="submit"]:hover {
-  background-color: #0056b3;
-}
-
-.modal button[type="button"]:hover {
-  background-color: #e2e6ea;
-}
-
 .modal.active {
-  display: block; /* Lorsque .active est ajouté, le modal devient visible */
-  /* opacity: 1;
-  transform: translate(-50%, -50%); */
+  display: block;
 }
 
-@media screen and (max-width: 600px) {
-  .center {
-    height: 80px;
-    padding: 5px 10px;
-  }
-  .center {
-    overflow-x: hidden;
-    overflow-y: hidden;
-  }
-  header {
-    padding: 15px;
-  }
-
-  .line {
-    flex-direction: column;
-    gap: 10px;
-    margin: 10px;
-  }
-  .modal {
-    width: 90%;
-  }
+.hide-nav {
+  display: none;
 }
 
+/* ... (le reste du CSS reste inchangé) ... */
+
+/* Styles spécifiques pour les écrans de tablette */
 @media screen and (max-width: 800px) {
   .center {
     height: 80px;
     padding: 5px 10px;
-  }
-
-  .center {
     overflow-x: hidden;
     overflow-y: hidden;
-    height: 100px;
-  }
-
-  header {
-    width: 100%;
   }
 
   .line {
@@ -223,17 +325,160 @@ button:hover {
   .customer {
     flex-direction: row-reverse;
   }
-  .characters,
-  .comics,
-  .favorites {
-    text-align: center; /* Centrez le texte des éléments du menu */
-    font-size: 18px; /* Réduisez la taille de la police */
+
+  /* .characters,
+  .comics, */
+  .navbar_item {
+    text-align: center;
+    font-size: 14px;
+    color: white;
   }
-  header .logo {
-    width: 70%;
+
+  header {
+    width: 100%;
+    height: 12vh;
   }
 
   header .log {
     width: 30%;
+  }
+}
+
+/* Styles spécifiques pour les écrans mobiles */
+@media screen and (max-width: 600px) {
+  .center {
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+
+  .header {
+    padding-top: 5px;
+    height: 10vh;
+  }
+  .line {
+    gap: 10px;
+    /* margin: 10px; */
+  }
+  .header-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .navbar_logo {
+    height: 100%;
+    overflow: hidden;
+    margin-right: 25vw;
+    /* position: relative; */
+  }
+  .navbar_logo img {
+    width: 30vw;
+
+    object-fit: cover;
+    /* clip-path: polygon(2% 0, 100% 0, 100% 90%, 0 100%); */
+  }
+
+  .navbar {
+    width: 0px;
+    padding: 0;
+    height: 50px;
+    display: none;
+  }
+
+  .navbar_links {
+    flex-direction: column;
+    justify-content: start;
+    position: fixed;
+    right: -100vw;
+    /* left: 0; */
+    top: 95px;
+    width: 100vw;
+    bottom: 0;
+    height: 100vh;
+    padding: 2rem;
+    z-index: 9999;
+    background-color: black;
+    visibility: hidden;
+    /* align-items: center; */
+  }
+
+  .show-nav .navbar_links {
+    right: 0;
+    visibility: visible;
+  }
+
+  .show-nav {
+    display: block;
+  }
+
+  .navbar_link {
+    display: block;
+    padding: 1.5rem;
+    font-size: 5vw;
+    margin-top: 10px;
+  }
+  .navbar_burger {
+    display: flex;
+    /* position: fixed; */
+    display: block;
+    background-color: black;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 25px;
+  }
+  /* .navbar_burger span.burger-bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 4px 0;
+  } */
+  .navbar_burger:hover {
+    cursor: pointer;
+  }
+
+  .burger-bar,
+  .burger-bar::before,
+  .burger-bar::after {
+    display: block;
+    width: 100%;
+    height: 3px;
+    position: relative;
+    border-radius: 3px;
+    background: white;
+  }
+
+  .burger-bar::before,
+  .burger-bar::after {
+    content: "";
+    position: absolute;
+    left: 1px;
+  }
+
+  .burger-bar::before {
+    transform: translateY(-12px);
+  }
+
+  .burger-bar::after {
+    transform: translateY(12px);
+  }
+
+  .show-nav {
+    display: block;
+  }
+  .show-nav .burger-bar {
+    background: transparent;
+  }
+
+  .show-nav .burger-bar::before {
+    transform: rotate(45deg) translateY(0px);
+  }
+
+  .show-nav .burger-bar::after {
+    transform: rotate(-45deg) translateY(0px);
+  }
+  .modal {
+    width: 90%;
   }
 }
