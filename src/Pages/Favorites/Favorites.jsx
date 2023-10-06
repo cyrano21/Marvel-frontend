@@ -32,7 +32,7 @@ function FavoritePage() {
   }
 
   return (
-    <main style={{ marginTop: "120px" }}>
+    <main className="fav-main">
       <button className="return-home" onClick={() => navigate("/")}>
         Home
       </button>
