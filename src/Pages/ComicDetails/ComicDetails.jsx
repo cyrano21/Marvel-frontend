@@ -1,4 +1,4 @@
-import "./ComicDetails.css";
+import "./comicDetails.css";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
