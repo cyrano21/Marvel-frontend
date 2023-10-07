@@ -10,7 +10,7 @@ main {
 }
 
 .home-main {
-  background-color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .welcome-text h1,
@@ -78,15 +78,11 @@ main {
   flex-direction: column;
   gap: 50px;
   background-color: rgb(203, 191, 191);
-
   background-image: url("../../assets/img/images/Lock-Screen-Marvel-GIF-Wallpaper.gif");
-  background-size: cover; /* Pour couvrir toute la surface de l'élément */
-  background-repeat: no-repeat; /* Pour éviter que le GIF ne se répète */
-  background-position: center center; /* Pour centrer l'image */
-
-  /* Dimensions de votre élément (modifiable selon vos besoins) */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
   width: 100%;
-  /* height: 400px; */
 }
 
 @keyframes mixedTransition {
@@ -97,7 +93,6 @@ main {
     background-size: 100% 100%;
   }
 
-  /* Transition vers Image 2 avec fondu et zoom */
   20%,
   25% {
     background-image: url("../../assets/img/images/marvel\ gif.gif"),
@@ -110,7 +105,6 @@ main {
     background-size: 100% 100%;
   }
 
-  /* Transition vers Image 3 avec fondu et zoom */
   45%,
   50% {
     background-image: url("../../assets/img/wallpaperbetter.com_7680x4320 (2).jpg"),
@@ -123,7 +117,6 @@ main {
     background-size: 100% 100%;
   }
 
-  /* Transition vers Image 4 avec fondu et zoom */
   70%,
   75% {
     background-image: url("../../assets/img/images/marvel\ gif.gif"),
@@ -151,7 +144,6 @@ main {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  /* width: 100%; */
 }
 
 .p-title {
@@ -164,7 +156,6 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* overflow: hidden; */
 }
 
 /* .p-title p, */
@@ -184,7 +175,7 @@ main {
 .img-title {
   width: 100%;
   height: 25vh;
-  /* background-color: aliceblue; */
+  background-color: rgba(0, 0, 0, 0.3);
   border: 2px solid red;
   border-radius: 10px;
   display: flex;
@@ -194,7 +185,6 @@ main {
   padding: 10px;
   box-sizing: border-box;
   position: relative;
-  /* gap: 100px; */
 }
 
 .img-title img {

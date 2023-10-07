@@ -3,7 +3,7 @@
   padding: 20px;
 }
 .ComicDetails {
-  margin-top: 200px;
+  margin-top: 50px;
   color: black;
   margin-top: 150px;
   font-family: Arial, sans-serif;
@@ -46,8 +46,11 @@
 
 .ComicDetails span {
   font-weight: bold;
+  font-size: 20px;
 }
-
+.ComicDetails p {
+  font-size: 20px;
+}
 .responsive-image {
   max-width: 100%;
   height: auto;
@@ -72,6 +75,11 @@
   cursor: pointer;
   transition: background-color 0.3s;
 }
+.comic-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
 .fav-btn-comic {
   width: 10%;
@@ -92,7 +100,7 @@
 .go_comics {
   background-color: #ff0000;
   border: none;
-  padding: 1px 10px;
+  padding: 10px 15px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -105,10 +113,18 @@
   font-weight: 500;
 }
 
+.comic-bloc {
+  margin-top: 100px;
+}
+
+.comic-bloc h1 {
+  margin-bottom: 15px;
+}
+
 .return-home:hover {
   background-color: #e60000;
 }
 
-.go_chraraters:hover {
+.go_comics:hover {
   background-color: #e60000;
 }

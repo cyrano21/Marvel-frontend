@@ -67,10 +67,9 @@ export default function ComicDetails() {
           Comics
         </button>
       </div>
-      <div>
+      <div className="comic-bloc">
         <h1>
-          <span>Title:</span> <br />
-          {comic.title}
+          <span> {comic.title}</span> <br />
         </h1>
         <img
           src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
@@ -78,8 +77,7 @@ export default function ComicDetails() {
           className="responsive-image"
         />
         <p>
-          <span>Description:</span> <br />
-          {comic.description}
+          {comic.description} <br />
         </p>
       </div>
     </main>
