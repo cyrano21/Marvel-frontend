@@ -358,14 +358,16 @@ a {
     margin-bottom: 10px;
   }
 
+  .header-bar img {
+    margin-right: 10px;
+  }
+
   .navbar_logo {
     height: 100%;
     overflow: hidden;
-    margin-right: 25vw;
   }
   .navbar_logo img {
-    width: 30vw;
-
+    width: 40vw;
     object-fit: cover;
   }
 
@@ -381,7 +383,7 @@ a {
     justify-content: start;
     position: fixed;
     right: -100vw;
-    top: 150px;
+    top: 14vh;
     width: 100vw;
     bottom: 0;
     height: 100vh;

@@ -1,5 +1,5 @@
 .CharacterDetails {
-  margin-top: 50px;
+  margin-top: 20px;
   font-family: Arial, sans-serif;
   max-width: 800px;
   padding: 20px;
@@ -28,25 +28,47 @@
   box-shadow: 10px 15px 15px rgba(0, 0, 0, 0.3);
 }
 
-.comic-image {
-  max-width: 150px;
-  max-height: 200px;
+.comics-blocks img {
+  max-width: 100px;
+  max-height: 150px;
   border-radius: 8px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 .comics-section {
-  color: red;
+  color: beige;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .comics-section h3 {
   font-size: 25px;
-  font-weight: bold;
+
   margin-bottom: 20px;
   margin-top: 100px;
+  color: black;
+  text-align: center;
+}
+
+.comics-blocks {
+  margin: 15px;
+  text-align: center;
+}
+.alternate {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.alternate:nth-child(even) {
+  grid-column: 3;
+}
+
+.comics-blocks p {
+  color: red;
+  font-size: 16px;
 }
 
 .text {
-  margin-bottom: 20px;
+  margin: 50px 0;
 }
 
 .char-btn {
@@ -76,13 +98,19 @@
   padding: 5px 10px;
 
   border-radius: 5px;
-  font-size: 14px;
+  /* font-size: 14px; */
   cursor: pointer;
   display: inline-block;
   font-size: 16px;
   margin: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
+}
+.fav-btn,
+.go_chraraters {
+  width: 30%;
+  padding: 5px 10px;
+  font-size: 14px;
 }
 
 .go_chraraters {
@@ -92,7 +120,7 @@
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 12px;
+  /* font-size: 12px; */
   margin: 2px;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -110,6 +138,43 @@
 }
 @media screen and (max-width: 800px) {
   .CharacterDetails {
-    width: 80%;
+    width: 95%;
+  }
+  .char-btn {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+  .fav-btn {
+    width: 100%;
+    background-color: yellow;
+    border: none;
+    padding: 5px 10px;
+
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .comics-blocks {
+    margin: 15px 0;
+  }
+  .comics-blocks img {
+    max-height: 120px;
+  }
+
+  .alternate {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .alternate:nth-child(even) {
+    grid-column: 2;
   }
 }

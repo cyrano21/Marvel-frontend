@@ -93,11 +93,7 @@ const Comics = () => {
   };
 
   return (
-    <main
-      style={{ marginTop: "120px" }}
-      className="page-content"
-      onWheel={handleWheel}
-    >
+    <main className="page-content" onWheel={handleWheel}>
       <div className="inputBar">
         <SearchBar
           searchTerm={searchTerm}
@@ -133,6 +129,8 @@ const Comics = () => {
                   : "♡"}
               </button>
               <div className="comic-front">
+                <p>Titre: {comic.title}</p>
+
                 <img
                   src={comic.thumbnail.path + "." + comic.thumbnail.extension}
                   alt={comic.title}

@@ -13,6 +13,7 @@ export default function Characters() {
   const limit = 100;
   const [searchTerm, setSearchTerm] = useState("");
   const [favorites, setFavorites] = useState([]);
+  const [isAlternate, setIsAlternate] = useState(false);
   const navigate = useNavigate();
 
   const toggleFavorite = (character) => {
@@ -55,7 +56,7 @@ export default function Characters() {
         if (results.length < limit) {
           setTotalPages(currentPage);
         } else {
-          setTotalPages(currentPage + 1); // Estimation, car nous ne connaissons pas le total exact
+          setTotalPages(currentPage + 1);
         }
       } catch (error) {
         console.error("An error occurred while fetching characters:", error);
@@ -90,6 +91,7 @@ export default function Characters() {
   const filteredCharacters = characters.filter((character) =>
     character.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
+  const characterCardClass = isAlternate ? "char-card alternate" : "char-card";
 
   return loading ? (
     <div className="spinner"></div>
@@ -104,6 +106,12 @@ export default function Characters() {
         <button className="return-home" onClick={() => navigate("/")}>
           Home
         </button>
+        <button
+          className="toggle-layout"
+          onClick={() => setIsAlternate(!isAlternate)}
+        >
+          Basculer la mise en page
+        </button>
       </div>
 
       <p className="char-titre-container">Personnages</p>
@@ -112,7 +120,7 @@ export default function Characters() {
         {filteredCharacters.map((character) => (
           <div
             key={character._id}
-            className="char-card"
+            className={characterCardClass}
             onClick={() => handleCharacterClick(character._id)}
           >
             <button
@@ -122,7 +130,10 @@ export default function Characters() {
               {favorites.some((fav) => fav._id === character._id) ? "❤️" : "♡"}
             </button>
             <div className="char-inner">
-              <p>name: {character.name}</p>
+              <div className="char-inner-p">
+                <p> {character.name}</p>
+              </div>
+
               <div className="char-front">
                 {character.thumbnail &&
                   character.thumbnail.path &&
@@ -149,11 +160,10 @@ export default function Characters() {
 
             <div className="char-back">
               <h2>
-                <span>name:</span> {character.name}
+                <span>{character.name}</span>
               </h2>
               <br />
               <div>
-                <span>description:</span>
                 <p> {character.description}</p>
               </div>
             </div>

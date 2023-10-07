@@ -146,7 +146,7 @@
   margin: 10px;
   perspective: 1000px;
   position: relative;
-  background-color: #fafafa;
+  background-color: rgba(0, 0, 0, 0.5);
   border: 1px solid #e0e0e0;
   padding: 20px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
@@ -169,6 +169,10 @@
   position: absolute;
   backface-visibility: hidden;
   transition: transform 0.5s ease;
+}
+
+.comic-front {
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .comic-back {
@@ -218,5 +222,36 @@
   100% {
     transform: rotate(360deg);
     margin-top: 100px;
+  }
+}
+
+@media (max-width: 715px) {
+  .comic-front {
+    position: relative;
+    width: 50vw;
+    height: 100%;
+    background-color: #333;
+  }
+
+  .comic-front p {
+    text-align: center;
+  }
+
+  .comic-card {
+    margin: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .active .comic-front img {
+    object-fit: cover;
+  }
+  .comic-card {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }

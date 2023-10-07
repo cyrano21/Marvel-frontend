@@ -74,12 +74,10 @@
   flex-wrap: wrap;
   justify-content: center;
   margin: 0 auto;
-  max-width: 1200px;
-  padding: 20px;
 }
 
 .char-card {
-  width: 200px;
+  width: 40vh;
   height: 300px;
   margin: 15px;
   perspective: 1000px;
@@ -89,6 +87,9 @@
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .char-card:hover {
@@ -96,22 +97,15 @@
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
-.char-front,
 .char-back {
   width: 100%;
   height: 100%;
   position: absolute;
-  backface-visibility: hidden; /* changé en hidden */
-  transition: transform 0.5s;
+  backface-visibility: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 10px;
-}
-
-.char-front {
-  background-color: #bbb;
 }
 
 .char-back {
@@ -119,37 +113,18 @@
   transform: rotateY(180deg);
 }
 
-.char-inner {
-  position: absolute;
-  width: 50%;
-  height: 100%;
-  transform-style: preserve-3d;
-  transition: transform 0.5s;
+.char-inner-p {
+  background-color: rgba(0, 0, 0, 0.8);
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  text-align: center;
 }
 
 .char-card:hover .char-inner {
   transform: rotateY(90deg);
 }
 
-.char-front,
 .char-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10px;
-}
-
-.char-front {
-  background-color: #bbb;
-}
-
-.char-back {
-  background-color: #f1f1f1;
-  transform: rotateY(180deg);
   padding: 10px;
   color: #000;
   text-align: center;
@@ -162,11 +137,6 @@
 .pagination {
   display: flex;
   justify-content: center;
-}
-
-.image {
-  width: 20%;
-  object-fit: cover;
 }
 
 .spinner {
@@ -186,5 +156,46 @@
   100% {
     transform: rotate(360deg);
     margin-top: 100px;
+  }
+}
+
+@media (max-width: 715px) {
+  .char-card {
+    margin: 5px;
+    width: 100%;
+  }
+  .char-inner {
+    margin-top: 10px;
+    height: 100%;
+  }
+  .favorite {
+    width: 30%;
+  }
+
+  /* .char-card  */
+
+  .alternate {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: calc(100% / 3 - 30px);
+ */
+  }
+
+  .alternate .alternate:nth-child(even) {
+    grid-column: 3;
+  }
+
+  .char-back .alternate {
+    padding: 0px;
+    color: #000;
+    text-align: center;
+  }
+
+  .char-inner {
+    width: 100%;
+  }
+
+  .char-card .alternate {
   }
 }
