@@ -233,7 +233,7 @@ export default function Home() {
   };
 
   return (
-    <main>
+    <main className="home-main">
       <div className="welcome-text">
         <h1>
           <p className="welcome">WELCOME TO MARVEL</p>

@@ -52,3 +52,63 @@
   max-width: 100%;
   height: auto;
 }
+
+.char-btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.return-home {
+  background-color: #ff0000;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.fav-btn-comic {
+  width: 10%;
+  background-color: yellow;
+  border: none;
+  padding: 5px 10px;
+
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.go_comics {
+  background-color: #ff0000;
+  border: none;
+  padding: 1px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 2px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 50px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 500;
+}
+
+.return-home:hover {
+  background-color: #e60000;
+}
+
+.go_chraraters:hover {
+  background-color: #e60000;
+}

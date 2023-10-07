@@ -1,13 +1,35 @@
+import "./ComicDetails.css";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import "./comicDetails.css";
 import { useNavigate } from "react-router-dom";
+
 export default function ComicDetails() {
   const [loading, setLoading] = useState(true);
   const [comic, setComic] = useState(null);
   const { comicId } = useParams();
+  const [comicFavorites, setComicFavorites] = useState([]); // Utilisez comicFavorites
   const navigate = useNavigate();
+
+  const toggleFavorite = (comic) => {
+    // Renommez la variable de l'argument pour éviter les confusions
+    let currentComicFavorites =
+      JSON.parse(localStorage.getItem("comicFavorites")) || [];
+
+    if (currentComicFavorites.some((fav) => fav._id === comic._id)) {
+      currentComicFavorites = currentComicFavorites.filter(
+        (fav) => fav._id !== comic._id
+      );
+    } else {
+      currentComicFavorites.push(comic);
+    }
+
+    localStorage.setItem(
+      "comicFavorites",
+      JSON.stringify(currentComicFavorites)
+    ); // Utilisez comicFavorites
+    setComicFavorites(currentComicFavorites); // Utilisez comicFavorites
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -30,9 +52,21 @@ export default function ComicDetails() {
     <span>Loading...</span>
   ) : (
     <main className="ComicDetails">
-      <button className="return-home" onClick={() => navigate("/")}>
-        Home
-      </button>
+      <div className="comic-btn">
+        <button className="return-home" onClick={() => navigate("/")}>
+          Home
+        </button>
+        <button
+          className="fav-btn-comic"
+          onClick={() => toggleFavorite(comic)} // Utilisez la fonction toggleFavorite
+        >
+          {comicFavorites.some((fav) => fav._id === comic._id) ? "❤️" : "♡"}{" "}
+          {/* Utilisez comicFavorites */}
+        </button>
+        <button className="go_comics" onClick={() => navigate("/comics")}>
+          Comics
+        </button>
+      </div>
       <div>
         <h1>
           <span>Title:</span> <br />

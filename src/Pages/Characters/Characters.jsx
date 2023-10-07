@@ -94,7 +94,7 @@ export default function Characters() {
   return loading ? (
     <div className="spinner"></div>
   ) : (
-    <div style={{ marginTop: "120px" }}>
+    <div>
       <div className="inputBar">
         <SearchBar
           searchTerm={searchTerm}

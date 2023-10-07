@@ -84,7 +84,7 @@
   background-position: center;
   object-fit: cover;
   width: 100%;
-  height: 20vh;
+  height: 30vh;
   animation: mixedTransition 24s infinite;
 }
 
@@ -100,10 +100,8 @@
 
 .line {
   display: flex;
-
   font-size: 2rem;
   justify-content: space-between;
-  /* gap: 20px; */
   width: 100%;
   align-items: center;
 }
@@ -111,7 +109,6 @@
 .customer {
   display: flex;
   gap: 15px;
-  /* width: 20%; */
   align-items: start;
   justify-content: space-around;
   margin-right: 10px;
@@ -125,22 +122,33 @@
 }
 .header-bar img {
   width: 20vw;
-}
-
-.navbar_logo {
-  /* width: 50%; */
-  height: 10%;
+  border-radius: 5px;
+  margin-right: 50px;
 }
 
 .navbar {
-  display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
+  width: 90%;
   padding: 1rem;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.5);
   color: white;
+  border-radius: 20%;
+}
+
+.show-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 20px;
+  font-size: 2rem;
+}
+
+.navbar_links {
+  gap: 20px;
+}
+
+.hide-nav {
+  display: none;
 }
 
 ul {
@@ -163,6 +171,8 @@ a {
 
 .navbar_links {
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .navbar_link {
@@ -182,7 +192,6 @@ a {
   border: none;
   color: inherit;
   display: none;
-  /* margin-right: 5px; */
 }
 
 .search {
@@ -191,19 +200,12 @@ a {
   justify-content: center;
 }
 
-/* .characters,
-.comics,
-.favorites {
-  transition: transform 0.3s ease;
-  color: #fff;
-  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff;
-} */
-
 .header-bar {
-  width: 80%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-around;
+  margin-bottom: 10px;
 }
 
 .form {
@@ -221,7 +223,6 @@ a {
   color: red;
 }
 
-/* Modal overlay */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -301,13 +302,6 @@ a {
   display: block;
 }
 
-.hide-nav {
-  display: none;
-}
-
-/* ... (le reste du CSS reste inchangé) ... */
-
-/* Styles spécifiques pour les écrans de tablette */
 @media screen and (max-width: 800px) {
   .center {
     height: 80px;
@@ -324,19 +318,18 @@ a {
 
   .customer {
     flex-direction: row-reverse;
+    margin-top: 15px;
   }
 
-  /* .characters,
-  .comics, */
   .navbar_item {
     text-align: center;
     font-size: 14px;
     color: white;
   }
 
-  header {
+  .header {
     width: 100%;
-    height: 12vh;
+    /* height: 20vh; */
   }
 
   header .log {
@@ -344,7 +337,6 @@ a {
   }
 }
 
-/* Styles spécifiques pour les écrans mobiles */
 @media screen and (max-width: 600px) {
   .center {
     overflow-x: hidden;
@@ -353,31 +345,28 @@ a {
 
   .header {
     padding-top: 5px;
-    height: 10vh;
+    height: 15vh;
   }
   .line {
     gap: 10px;
-    /* margin: 10px; */
   }
   .header-bar {
     display: flex;
     align-items: center;
     justify-content: space-around;
     width: 100%;
-    margin-bottom: 6px;
+    margin-bottom: 10px;
   }
 
   .navbar_logo {
     height: 100%;
     overflow: hidden;
     margin-right: 25vw;
-    /* position: relative; */
   }
   .navbar_logo img {
     width: 30vw;
 
     object-fit: cover;
-    /* clip-path: polygon(2% 0, 100% 0, 100% 90%, 0 100%); */
   }
 
   .navbar {
@@ -392,16 +381,14 @@ a {
     justify-content: start;
     position: fixed;
     right: -100vw;
-    /* left: 0; */
-    top: 95px;
+    top: 150px;
     width: 100vw;
     bottom: 0;
     height: 100vh;
     padding: 2rem;
     z-index: 9999;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.8);
     visibility: hidden;
-    /* align-items: center; */
   }
 
   .show-nav .navbar_links {
@@ -421,20 +408,13 @@ a {
   }
   .navbar_burger {
     display: flex;
-    /* position: fixed; */
     display: block;
-    background-color: black;
     align-items: center;
     justify-content: center;
 
     border-radius: 25px;
   }
-  /* .navbar_burger span.burger-bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 4px 0;
-  } */
+
   .navbar_burger:hover {
     cursor: pointer;
   }
@@ -465,9 +445,6 @@ a {
     transform: translateY(12px);
   }
 
-  .show-nav {
-    display: block;
-  }
   .show-nav .burger-bar {
     background: transparent;
   }
