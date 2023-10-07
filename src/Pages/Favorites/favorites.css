@@ -39,10 +39,11 @@
 }
 
 .favorites-container {
-  background-color: #321515;
-  /* margin-left: 20px; */
+  background-color: #321515a4;
+
   padding-left: 20px;
   height: 100%;
+  width: 100%;
   padding: 20px;
   flex-wrap: wrap;
   flex: 1;
@@ -59,7 +60,7 @@
 .favorites-container .infos {
   color: black;
   background-color: white;
-  height: 200px;
+  height: auto;
   overflow-y: auto;
 }
 
@@ -109,21 +110,22 @@
 }
 .comic-card img {
   width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
+  height: 20vh;
+  display: flex;
+  /* margin: 0 auto; */
   cursor: zoom-in;
   object-fit: cover;
+  gap: 5px;
 }
 
 .char-fav {
-  display: flex;
+  /* display: flex; */
   height: 40%;
   margin-bottom: 10px;
 }
 
 .com-fav {
-  display: flex;
+  /* display: flex; */
   height: auto;
   margin-top: 20px;
 }
@@ -143,10 +145,7 @@
   overflow-x: hidden;
 }
 
-.character-card,
 .comic-card {
-  flex: 0 0 auto;
-  margin-right: 10px;
 }
 
 @media screen and (max-width: 600px) {
@@ -158,6 +157,7 @@
 
   .comic-card {
     width: 100%;
+    height: 100%;
     margin: 0 0;
   }
   .com-fav h2 {
