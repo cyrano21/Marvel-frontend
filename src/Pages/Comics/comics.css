@@ -52,25 +52,13 @@
   transform: rotateY(180deg);
 }
 
-.return-home {
-  display: block;
-  margin: 20px auto;
-  padding: 10px 20px;
-  background-color: #ff4081;
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background 0.3s ease;
-}
-
 .return-home:hover {
   background-color: #f50057;
 }
 
 .inputBar {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   margin: 15px 0 20px;
   gap: 20px;
@@ -78,8 +66,8 @@
 
 .inputBar button {
   width: 100px;
-  background-color: #ff4081;
-  color: white;
+  background-color: #c4144ebc;
+  color: rgba(255, 255, 255, 0.665);
   border: none;
   cursor: pointer;
   padding: 10px;
@@ -121,7 +109,7 @@
   text-align: center;
   color: #ff4081;
   padding: 10px;
-  background-color: #fafafa;
+  background-color: #fafafac3;
   border-radius: 5px;
   margin: 20px 0;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);

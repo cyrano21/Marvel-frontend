@@ -100,12 +100,11 @@ const Comics = () => {
           handleSearchChange={handleSearchChange}
           className="bar"
         />
+        <p className="titre-container">COMICS</p>
         <button className="return-home" onClick={() => navigate("/")}>
           Home
         </button>
       </div>
-
-      <p className="titre-container">Comics</p>
 
       <div className="comics-container scrollable">
         {loading ? (

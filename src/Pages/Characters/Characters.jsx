@@ -114,7 +114,7 @@ export default function Characters() {
         </button>
       </div>
 
-      <p className="char-titre-container">Personnages</p>
+      <p className="char-titre-container">PERSONNAGES</p>
 
       <div className="char-container">
         {filteredCharacters.map((character) => (
