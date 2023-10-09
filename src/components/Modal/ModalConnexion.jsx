@@ -42,9 +42,9 @@ const ModalConnexion = ({ setShowConnexionModal, onSignUpClick }) => {
             />
           </div>
           <div className="form-btn">
-            <button type="submit">Connexion</button>
-
-            <button></button>
+            <button className="form-btn" type="submit">
+              <Link to="/">Connexion</Link>
+            </button>
 
             <p onClick={onSignUpClick}>s'inscrire</p>
           </div>

@@ -7,7 +7,7 @@ main {
   font-family: Arial, sans-serif;
   max-width: 80%;
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.822);
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   color: black;
@@ -140,5 +140,35 @@ main {
 
   .alternate:nth-child(even) {
     grid-column: 2;
+  }
+  .char-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 25vh;
+    flex: 1;
+    flex-wrap: wrap;
+    background-color: rgba(128, 128, 128, 0.382);
+  }
+  .bascul-btn {
+    background-color: rgba(255, 255, 0, 0.983);
+    border: 1px solid black;
+  }
+
+  .return-home {
+    background-color: #ff0000b5;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .go_chraraters {
+    background-color: #ff0000cb;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
   }
 }

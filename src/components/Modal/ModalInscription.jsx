@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./modal.css"; // Assurez-vous d'importer le fichier CSS approprié
+import { Link } from "react-router-dom";
 
 const ModalInscription = ({ setShowInscriptionModal }) => {
   const [username, setUsername] = useState("");
@@ -65,8 +66,9 @@ const ModalInscription = ({ setShowInscriptionModal }) => {
               onChange={(e) => setConfirmPassword(e.target.value)}
             />
           </div>
+
           <button className="form-btn" type="submit">
-            S'inscrire
+            <Link to="/">S'inscrire</Link>
           </button>
         </form>
       </div>
