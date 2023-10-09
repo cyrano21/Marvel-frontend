@@ -54,7 +54,10 @@ export default function CharacterDetails() {
         <button className="fav-btn" onClick={() => toggleFavorite(item)}>
           {favorites.some((fav) => fav._id === item._id) ? "❤️" : "♡"}
         </button>
-        <button onClick={() => setIsAlternate(!isAlternate)}>
+        <button
+          className="bascul-btn"
+          onClick={() => setIsAlternate(!isAlternate)}
+        >
           Basculer la mise en page
         </button>
         <button

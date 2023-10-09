@@ -1,7 +1,11 @@
+main {
+  width: 100%;
+}
+
 .CharacterDetails {
   margin-top: 20px;
   font-family: Arial, sans-serif;
-  max-width: 800px;
+  max-width: 80%;
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 10px;
@@ -72,61 +76,41 @@
 }
 
 .char-btn {
-  width: 100%;
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: space-around;
+  height: 6vh;
+  flex: 1;
+  gap: 5px;
+}
+
+.fav-btn {
+  background-color: rgba(255, 255, 0, 0.983);
+  border: 1px solid black;
+  /* margin-right: 10px; */
+}
+
+.bascul-btn {
+  background-color: rgba(255, 255, 0, 0.983);
+  border: 1px solid black;
+  margin-right: 10px;
 }
 
 .return-home {
   background-color: #ff0000;
-  border: none;
   color: white;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 5px;
+  font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s;
-}
-
-.fav-btn {
-  width: 10%;
-  background-color: yellow;
-  border: none;
-  padding: 5px 10px;
-
-  border-radius: 5px;
-  /* font-size: 14px; */
-  cursor: pointer;
-  display: inline-block;
-  font-size: 16px;
-  margin: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-.fav-btn,
-.go_chraraters {
-  width: 30%;
-  padding: 5px 10px;
-  font-size: 14px;
 }
 
 .go_chraraters {
   background-color: #ff0000;
-  border: none;
-  padding: 1px 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  /* font-size: 12px; */
-  margin: 2px;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s;
-  border-radius: 50px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-weight: 500;
 }
 
 .return-home:hover {
@@ -139,26 +123,6 @@
 @media screen and (max-width: 800px) {
   .CharacterDetails {
     width: 95%;
-  }
-  .char-btn {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-  }
-  .fav-btn {
-    width: 100%;
-    background-color: yellow;
-    border: none;
-    padding: 5px 10px;
-
-    border-radius: 5px;
-    font-size: 14px;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 16px;
-    margin: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
   }
 
   .comics-blocks {
