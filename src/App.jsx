@@ -10,12 +10,28 @@ import Footer from "./components/Footer";
 import { Link } from "react-router-dom";
 import CharacterComics from "./Pages/CharacterComics/CharacterComics";
 import ComicDetails from "./Pages/ComicDetails/ComicDetails";
+import ModalConnexion from "./components/Modal/ModalConnexion";
+import ModalInscription from "./components/Modal/ModalInscription";
+import { useState } from "react";
 
 function App() {
+  const [showInscriptionModal, setShowInscriptionModal] = useState(false);
+  const [showConnexionModal, setShowConnexionModal] = useState(false);
+  const handleSignUpClick = () => {
+    setShowConnexionModal(false);
+    setShowInscriptionModal(true);
+  };
   return (
     <Router>
-      <Header />
-      <div style={{ overflowY: "hidden" }}></div>
+      {/* <ModalConnexion /> */}
+      {/* <ModalInscription /> */}
+      <Header
+        showInscriptionModal={showInscriptionModal}
+        setShowInscriptionModal={setShowInscriptionModal}
+        showConnexionModal={showConnexionModal}
+        setShowConnexionModal={setShowConnexionModal}
+      />
+
       <Routes>
         <Route path="/favorites" element={<Favorites />} />
         <Route path="/" element={<Home />} />
@@ -29,6 +45,15 @@ function App() {
       <Footer>
         <Link to="/">Home</Link>
       </Footer>
+      {showInscriptionModal && (
+        <ModalInscription setShowInscriptionModal={setShowInscriptionModal} />
+      )}
+      {showConnexionModal && (
+        <ModalConnexion
+          setShowConnexionModal={setShowConnexionModal}
+          onSignUpClick={handleSignUpClick}
+        />
+      )}
     </Router>
   );
 }

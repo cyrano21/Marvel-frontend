@@ -2,60 +2,37 @@ import "./header.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import logo from "../../assets/img/marvelLogo.png";
-export default function Header() {
-  const [showLoginModal, setShowLoginModal] = useState(false);
-  const [showSignUpModal, setShowSignUpModal] = useState(false);
+// import ModalInscription from "../Modal/ModalInscription";
+
+export default function Header({
+  showInscriptionModal,
+  setShowInscriptionModal,
+  showConnexionModal,
+  setShowConnexionModal,
+}) {
   const [showLinks, setShowLinks] = useState(false);
 
   const handleShowLinks = () => {
     setShowLinks(!showLinks);
   };
 
-  const ModalConnection = ({ fermer }) => {
-    return (
-      <div className="modal">
-        <h2>Login</h2>
-        <form action="">
-          <input type="mail" placeholder="Email" name="email" />
-          <input type="password" placeholder="password" name="password" />
-          <button type="submit">Login</button>
-          <button onClick={fermer}>Fermer</button>
-        </form>
-      </div>
-    );
-  };
-
-  const ModalInscription = ({ fermer }) => {
-    return (
-      <div className="modal">
-        <h2>Signup</h2>
-        <form action="">
-          <input type="text" name="username" placeholder="username" />
-          <input type="email" name="mail" placeholder="Email" />
-          <input type="password" name="password" placeholder="password" />
-          <input
-            type="password"
-            name="confirmPassword"
-            placeholder="Confirm your password"
-          />
-          <button type="submit">Signup</button>
-          <button type="button" onClick={fermer}>
-            Fermer
-          </button>
-        </form>
-      </div>
-    );
-  };
-
   return (
     <header className="header">
       <div className="line">
         <div className="customer">
-          <button className="form" onClick={() => setShowLoginModal(true)}>
-            connexion
+          <button
+            onClick={() => {
+              setShowConnexionModal(!showConnexionModal);
+            }}
+          >
+            Connexion
           </button>
-          <button className="form" onClick={() => setShowSignUpModal(true)}>
-            S'enregistrer
+          <button
+            onClick={() => {
+              setShowInscriptionModal(!showInscriptionModal);
+            }}
+          >
+            S'inscrire
           </button>
         </div>
         <div className="header-bar">
@@ -85,24 +62,6 @@ export default function Header() {
                   COMICS
                 </Link>
               </li>
-              {/* <li className="navbar_item">
-                <a
-                  className="navbar_link"
-                  href="/apropos"
-                  onClick={handleShowLinks}
-                >
-                  A propos
-                </a>
-              </li> */}
-              {/* <li className="navbar_item">
-                <a
-                  className="navbar_link"
-                  href="/contact"
-                  onClick={handleShowLinks}
-                >
-                  Contact
-                </a>
-              </li> */}
             </ul>
           </nav>
           <div className="navbar_item">
@@ -113,16 +72,9 @@ export default function Header() {
         </div>
       </div>
 
-      {showSignUpModal && (
-        <div className="modal-overlay">
-          <ModalInscription fermer={() => setShowSignUpModal(false)} />
-        </div>
-      )}
-      {showLoginModal && (
-        <div className="modal-overlay">
-          <ModalConnection fermer={() => setShowLoginModal(false)} />
-        </div>
-      )}
+      {/* {showInscriptionModal && (
+        <ModalInscription key={Date.now()} onClose={handleCloseModal} />
+      )} */}
     </header>
   );
 }

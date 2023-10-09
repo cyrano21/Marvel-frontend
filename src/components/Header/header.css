@@ -84,7 +84,7 @@
   background-position: center;
   object-fit: cover;
   width: 100%;
-  height: 30vh;
+  height: 20vh;
   animation: mixedTransition 24s infinite;
 }
 
@@ -113,6 +113,11 @@
   justify-content: space-around;
   margin-right: 10px;
   margin-left: 10px;
+  width: 25vw;
+}
+.customer button {
+  display: flex;
+  flex-wrap: nowrap;
 }
 
 .header-bar {
@@ -127,12 +132,25 @@
 }
 
 .navbar {
-  flex-wrap: wrap;
-  width: 90%;
+  display: flex;
+  width: 40vh;
   padding: 1rem;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
   color: white;
   border-radius: 20%;
+}
+
+.navbar_links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 20px;
+}
+
+.navbar_item {
+  display: block;
+  font-size: 2rem;
 }
 
 .show-nav {
@@ -140,15 +158,7 @@
   align-items: center;
   justify-content: space-around;
   gap: 20px;
-  font-size: 2rem;
-}
-
-.navbar_links {
-  gap: 20px;
-}
-
-.hide-nav {
-  display: none;
+  font-size: 1rem;
 }
 
 ul {
@@ -159,6 +169,7 @@ ul {
 a {
   text-decoration: none;
   color: inherit;
+  font-size: 16px;
 }
 
 .favorites {
@@ -167,12 +178,6 @@ a {
   padding: 5px 10px;
   border-radius: 5px;
   font-weight: 500;
-}
-
-.navbar_links {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .navbar_link {
@@ -191,7 +196,6 @@ a {
   background: transparent;
   border: none;
   color: inherit;
-  display: none;
 }
 
 .search {
@@ -207,100 +211,9 @@ a {
   justify-content: space-around;
   margin-bottom: 10px;
 }
-
-.form {
-  padding: 5px 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  color: white;
-  background-color: red;
-  font-weight: bold;
-}
-
-.form:hover {
-  background-color: black;
-  color: red;
-}
-
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 999;
-}
-
-.modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1000;
-  width: 80%;
-  max-width: 500px;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 10px;
-  background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
-  border: 1px solid #fff;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
-  display: none; /* Par défaut, caché */
-}
-
-.modal h2 {
-  margin-bottom: 15px;
-  color: #fff;
-  font-family: "Arial", sans-serif;
-}
-
-.modal form {
-  display: flex;
-  flex-direction: column;
-}
-
-.modal input {
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  outline: none;
-  transition: border 0.2s;
-}
-
-.modal input:focus {
-  border-color: #007bff;
-}
-
-.modal button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 10px;
-  transition: background-color 0.2s, transform 0.2s;
-}
-
-.modal button[type="submit"] {
-  color: #fff;
-  background-image: linear-gradient(to right, #6a11cb, #2575fc);
-}
-
-.modal button[type="button"] {
-  color: #333;
-  margin-left: 10px;
-  background-color: #f1f1f1;
-}
-
-.modal button:hover {
-  transform: scale(1.1);
-}
-
-.modal.active {
-  display: block;
-}
+/* .navbar_burger {
+  display: none;
+} */
 
 @media screen and (max-width: 755px) {
   .center {
@@ -315,21 +228,25 @@ a {
     gap: 20px;
     font-size: 30px;
   }
+  .navbar_burger {
+    display: block;
+  }
 
   .customer {
     flex-direction: row-reverse;
     margin-top: 15px;
   }
 
-  .navbar_item {
-    text-align: center;
-    font-size: 14px;
-    color: white;
-  }
-
   .header {
     width: 100%;
-    height: 15vh;
+  }
+  .header {
+    height: 20vh;
+  }
+
+  .navbar_logo {
+    height: 100%;
+    overflow: hidden;
   }
 
   header .log {
@@ -357,7 +274,7 @@ a {
 
   .header {
     padding-top: 5px;
-    height: 15vh;
+    /* height: 15vh; */
   }
   .line {
     gap: 10px;
@@ -368,7 +285,7 @@ a {
     justify-content: space-around;
     width: 100%;
     margin-bottom: 10px;
-    height: 50%;
+    height: 30%;
   }
 
   .header-bar img {
@@ -377,10 +294,10 @@ a {
 
   .navbar_logo {
     height: 100%;
-    overflow: hidden;
+    width: 20vw;
   }
   .navbar_logo img {
-    width: 40vw;
+    width: 100%;
     object-fit: cover;
   }
 
@@ -388,7 +305,7 @@ a {
     width: 0px;
     padding: 0;
     height: 50px;
-    display: none;
+    /* display: none; */
   }
 
   .navbar_links {
@@ -403,7 +320,7 @@ a {
     padding: 2rem;
     z-index: 9999;
     background-color: rgba(0, 0, 0, 0.8);
-    visibility: hidden;
+    /* visibility: hidden; */
   }
 
   .show-nav .navbar_links {
@@ -469,8 +386,5 @@ a {
 
   .show-nav .burger-bar::after {
     transform: rotate(-45deg) translateY(0px);
-  }
-  .modal {
-    width: 90%;
   }
 }
