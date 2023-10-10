@@ -249,7 +249,6 @@ export default function Home() {
               navigate("/characters");
             }}
           >
-            {" "}
             PERSONNAGES
           </h1>
           <Carousel

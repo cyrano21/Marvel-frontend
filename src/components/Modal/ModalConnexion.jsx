@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./modal.css";
+import { Link } from "react-router-dom";
 
 const ModalConnexion = ({ setShowConnexionModal, onSignUpClick }) => {
   const [username, setUsername] = useState("");
@@ -41,7 +42,7 @@ const ModalConnexion = ({ setShowConnexionModal, onSignUpClick }) => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <div className="form-btn">
+          <div>
             <button className="form-btn" type="submit">
               <Link to="/">Connexion</Link>
             </button>
