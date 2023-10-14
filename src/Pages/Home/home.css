@@ -10,7 +10,7 @@ main {
 }
 
 .home-main {
-  background-color: rgba(0, 0, 0, 0.5);
+  /* background-color: rgba(0, 0, 0, 0.5); */
 }
 
 .welcome-text h1,
@@ -26,6 +26,7 @@ main {
   margin-bottom: 5vh;
   color: #0ff;
   text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff, 0 0 40px #0ff;
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 .welcome-text h1 .welcome {
@@ -41,8 +42,10 @@ main {
   margin-bottom: 2.5vh;
   color: #fff;
   text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff;
-  background-color: rgba(0, 0, 0, 0.487);
+  background-color: rgba(255, 255, 255, 0.8);
   border-radius: 10px;
+  color: black;
+  font-weight: bold;
 }
 
 @keyframes slideInFromLeft {
@@ -80,7 +83,8 @@ main {
   flex-direction: column;
   gap: 50px;
   background-color: rgb(203, 191, 191);
-  background-image: url("../../assets/img/images/Lock-Screen-Marvel-GIF-Wallpaper.gif");
+  background-image: url(../../assets/img/1312484.jpg);
+
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -88,7 +92,6 @@ main {
 }
 
 @keyframes mixedTransition {
-  /* Début: Image 1 avec un léger zoom */
   0%,
   20% {
     background-image: url("../../assets/img/images/Lock-Screen-Marvel-GIF-Wallpaper.gif");
@@ -160,7 +163,6 @@ main {
   align-items: center;
 }
 
-/* .p-title p, */
 .img-title .description {
   padding: 5px;
   overflow: hidden;
@@ -216,11 +218,6 @@ main {
 .home-comic {
   margin: 0 20px;
 }
-
-/* .home-char p,
-.home-comic p {
-  
-}  */
 
 .carousel-container {
   perspective: 1200px;
