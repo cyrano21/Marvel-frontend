@@ -23,8 +23,6 @@ function App() {
   };
   return (
     <Router>
-      {/* <ModalConnexion /> */}
-      {/* <ModalInscription /> */}
       <Header
         showInscriptionModal={showInscriptionModal}
         setShowInscriptionModal={setShowInscriptionModal}

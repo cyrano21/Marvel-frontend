@@ -27,24 +27,6 @@ export default function Home() {
   };
 
   useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("animate-zoom");
-        }
-      });
-    });
-
-    const titles = document.querySelectorAll(".welcome-title h1");
-    titles.forEach((title) => observer.observe(title));
-
-    // Nettoyage: désinscrire les titres de l'observateur lors du démontage du composant
-    return () => {
-      titles.forEach((title) => observer.unobserve(title));
-    };
-  }, []);
-
-  useEffect(() => {
     const fetchCharacters = async () => {
       const response = await axios.get(
         "https://site--marvel-backend--cl5kfjmsrksj.code.run/characters"
@@ -60,6 +42,7 @@ export default function Home() {
     };
 
     fetchCharacters();
+
     fetchComics();
 
     const mettreAJourItemsToShow = () => {
