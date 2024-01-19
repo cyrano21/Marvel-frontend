@@ -1,0 +1,130 @@
+.modal-root {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: red;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  display: block;
+  width: 70%;
+  max-width: 500px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+  border: 1px solid #fff;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+.close p {
+  color: red;
+  font-weight: bold;
+}
+
+/* Style pour le formulaire */
+form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: 100%;
+}
+
+/* Style pour les titres des modaux */
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #2b2b2b;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Style pour les boutons */
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.form-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-btn p {
+  cursor: pointer;
+}
+
+.form-btn p:hover {
+  color: black;
+}
+/* Style pour les boutons "S'inscrire" */
+button[type="submit"] {
+  color: #fff;
+  background-image: linear-gradient(to right, #6a11cb, #2575fc);
+}
+
+/* Style pour les boutons "Fermer" */
+button[type="button"] {
+  color: #333;
+  margin-left: 10px;
+  background-color: #dcd9d9;
+}
+
+/* Style pour les boutons au survol */
+button:hover {
+  transform: scale(1.1);
+}
+
+/* Style pour les groupes de formulaire (étiquette + champ) */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: black;
+}
+
+/* Style pour les champs de formulaire */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+  background-color: #ccc;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="password"]:focus {
+  border-color: #007bff;
+}
+
+.close {
+}

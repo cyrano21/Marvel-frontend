@@ -1,0 +1,245 @@
+.page-content {
+  max-height: calc(100vh - 100px);
+  overflow: auto;
+}
+
+.comics-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  gap: 20px;
+}
+
+.comic-card {
+  width: 200px;
+  height: 300px;
+  margin: 10px;
+  perspective: 1000px;
+  position: relative;
+  background-color: #fafafa;
+  border: 1px solid #e0e0e0;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.comic-card:hover {
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+.comic-front,
+.comic-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  transition: transform 0.5s ease;
+}
+
+.comic-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.comic-front {
+  background-color: #dcdcdc;
+}
+
+.comic-back {
+  background-color: #f1f1f1;
+  transform: rotateY(180deg);
+}
+
+.return-home:hover {
+  background-color: #f50057;
+}
+
+.inputBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 0 20px;
+  gap: 20px;
+}
+
+.inputBar button {
+  width: 100px;
+  background-color: #c4144ebc;
+  color: rgba(255, 255, 255, 0.665);
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  transition: background 0.3s ease;
+}
+
+.inputBar button:hover {
+  background-color: #f50057;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: 20px;
+}
+
+.pagination button {
+  margin: 0 10px;
+  padding: 5px 10px;
+  background: none;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.pagination button:hover {
+  background: #f0f0f0;
+}
+
+.pagination button.disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.titre-container {
+  font-size: 24px;
+  text-align: center;
+  color: #ff4081;
+  padding: 10px;
+  background-color: #fafafac3;
+  border-radius: 5px;
+  margin: 20px 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-weight: 700;
+}
+
+.back-title {
+  font-weight: bold;
+}
+
+.back-description {
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 10px;
+  background-color: #f1f1f1;
+  color: #333;
+}
+.comic-card {
+  width: 200px;
+  height: 300px;
+  margin: 10px;
+  perspective: 1000px;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid #e0e0e0;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.comic-card:hover .comic-front {
+  transform: rotateY(180deg);
+}
+
+.comic-card:hover .comic-back {
+  transform: rotateY(0deg);
+}
+
+.comic-front,
+.comic-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  transition: transform 0.5s ease;
+}
+
+.comic-front {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.comic-back {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #f1f1f1;
+  transform: rotateY(180deg);
+  color: #333;
+}
+
+.back-title {
+  font-weight: bold;
+}
+
+.back-description {
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 10px;
+  background-color: #f1f1f1;
+  color: #333;
+}
+.scrollable {
+  display: flex;
+  overflow-x: auto;
+}
+
+.favorite-comic {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.favorite-comic.active {
+  color: red;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+    margin-top: 50px;
+  }
+  100% {
+    transform: rotate(360deg);
+    margin-top: 100px;
+  }
+}
+
+@media (max-width: 715px) {
+  .comic-front {
+    position: relative;
+    width: 50vw;
+    height: 100%;
+    background-color: #333;
+  }
+
+  .comic-front p {
+    text-align: center;
+  }
+
+  .comic-card {
+    margin: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .active .comic-front img {
+    object-fit: cover;
+  }
+  .comic-card {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

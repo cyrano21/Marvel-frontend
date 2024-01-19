@@ -1,0 +1,166 @@
+.fav-main {
+  margin-top: 20px;
+}
+
+.character-card {
+  position: relative;
+  margin: 10px 5px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 30vh;
+}
+
+.character-card img {
+  width: 50%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  cursor: zoom-in;
+}
+
+.character-card h3 {
+  font-size: 20px;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.character-card p {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.favorite-type {
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.favorites-container {
+  background-color: #321515a4;
+
+  padding-left: 20px;
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.favorites-container h2 {
+  font-weight: bold;
+  background-color: red;
+  font-size: 20px;
+  /* margin-top: 20px; */
+  text-align: center;
+}
+
+.favorites-container .infos {
+  color: black;
+  background-color: white;
+  height: auto;
+  overflow-y: auto;
+}
+
+.favorites-container .infos h3 {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.favorite-text {
+  background-color: blue;
+}
+
+.remove-fav-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.remove-fav-btn:hover {
+  background-color: rgba(202, 39, 39, 0.9);
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.backdrop img {
+  max-width: 80%;
+  max-height: 80%;
+}
+.comic-card img {
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  /* margin: 0 auto; */
+  cursor: zoom-in;
+  object-fit: cover;
+  gap: 5px;
+}
+
+.char-fav {
+  /* display: flex; */
+  height: 40%;
+  margin-bottom: 10px;
+}
+
+.com-fav {
+  /* display: flex; */
+  height: auto;
+  margin-top: 20px;
+}
+
+.carousel-container {
+  display: flex;
+  overflow-x: auto;
+  width: 100%;
+  height: 100%;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.char-fav,
+.com-fav {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.comic-card {
+}
+
+@media screen and (max-width: 600px) {
+  .fav-main {
+    margin-top: 5px;
+    height: 80%;
+    width: 100%;
+  }
+
+  .comic-card {
+    width: 100%;
+    height: 100%;
+    margin: 0 0;
+  }
+  .com-fav h2 {
+    margin: 0 0;
+  }
+}

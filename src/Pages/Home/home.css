@@ -1,0 +1,445 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  margin-top: 5vh;
+}
+
+.welcome-text h1,
+.welcome-title h1 {
+  letter-spacing: 5px;
+  font-family: "avenger", sans-serif;
+  text-align: center;
+  margin-top: 5vh;
+  cursor: pointer;
+  animation: zoomIn 1s forwards;
+}
+
+.welcome-text h1 {
+  font-size: 3vw;
+  margin-bottom: 5vh;
+  color: #0ff;
+  text-shadow: 2px 2px 4px #000000, -2px -2px 4px #FF0000;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.welcome-text h1:hover,
+.welcome-title h1:hover {
+  color: red;
+}
+
+.welcome-text h1 .welcome {
+  animation: slideInFromLeft 1s forwards;
+}
+
+.welcome-text h1 .home {
+  animation: slideInFromRight 2s forwards;
+}
+
+.welcome-title h1 {
+  color: #0ff;
+  font-size: 3vw;
+  margin-bottom: 2.5vh;
+  text-shadow: 2px 2px 4px #000000, -2px -2px 4px #FF0000;
+  background-color: rgba(255, 255, 255, 0.849);
+  border-radius: 10px;
+  transition: 0.5s;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.part-char {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 50px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 100%;
+  height: 60vw;
+}
+
+@keyframes mixedTransition {
+  0%,
+  20% {
+    background-image: url("../../assets/img/images/Lock-Screen-Marvel-GIF-Wallpaper.gif");
+    background-size: 100% 100%;
+  }
+
+  20%,
+  25% {
+    background-image: url("../../assets/img/images/marvelgif.gif"),
+      url("../../assets/img/images/208646.gif");
+    background-size: 105% 105%, 100% 100%;
+  }
+  25%,
+  45% {
+    background-image: url("../../assets/img/images/Lock-Screen-Marvel-GIF-Wallpaper.gif");
+    background-size: 100% 100%;
+  }
+
+  45%,
+  50% {
+    background-image: url("../../assets/img/wallpaperbetter.com_7680x4320 (2).jpg"),
+      url("../../assets/img/images/208646.gif");
+    background-size: 105% 105%, 100% 100%;
+  }
+  50%,
+  70% {
+    background-image: url("../../assets/img/images/208646.gif");
+    background-size: 100% 100%;
+  }
+
+  70%,
+  75% {
+    background-image: url("../../assets/img/images/marvelgif.gif"),
+      url("../../assets/img/images/208646.gif");
+    background-size: 105% 105%, 100% 100%;
+  }
+  75%,
+  95% {
+    background-image: url("../../assets/img/images/Lock-Screen-Marvel-GIF-Wallpaper.gif");
+    background-size: 100% 100%;
+  }
+
+  /* Retour à l'Image 1 avec un léger zoom */
+  95%,
+  100% {
+    background-image: url("../../assets/img/images/marvelgif.gif"),
+      url("../../assets/img/images/208646.gif");
+    background-size: 105% 105%, 100% 100%;
+  }
+}
+
+.part-comic {
+  animation: mixedTransition 24s infinite;
+  background-image: url("../../assets/img/images/marvelgif.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 100%;
+}
+
+.p-title {
+  background-color: red;
+  width: 100%;
+  height: 50px;
+  margin-bottom: 35px;
+  /* text-align: center; */
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-title .description {
+  padding: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.p-title p {
+  font-weight: bold;
+  text-shadow: 2px 2px 4px #000000, -2px -2px 4px #FF0000;
+  font-size: 20px;
+  text-align: center;
+}
+
+.img-title {
+  cursor: pointer;
+  width: 100%;
+  height: 200px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 2px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.img-title img {
+  max-width: 90%;
+  height: 30vh;
+  object-fit: cover;
+  display: block;
+  margin: 10px auto;
+}
+
+.img-title .description {
+  color: #333;
+  text-align: center;
+  max-width: 90%;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 60px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  white-space: nowrap;
+}
+
+.home-char,
+.home-comic {
+  margin: 0 20px;
+}
+
+.carousel-container {
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+
+.carousel-image {
+  transform: rotateY(-60deg);
+  transition: transform 0.3s ease;
+}
+
+.carousel-image:hover {
+  transform: rotateY(-60deg) scale(1.05);
+}
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.slideInFromLeft {
+  animation: slideInFromLeft 1s forwards;
+}
+
+.slideInFromRight {
+  animation: slideInFromRight 1s forwards;
+}
+
+.slideInFromTop {
+  animation: slideInFromTop 1s forwards;
+}
+
+.slideInFromBottom {
+  animation: slideInFromBottom 1s forwards;
+}
+
+@media (max-width: 715px) {
+  .welcome-text h1 {
+    line-height: 3;
+    padding: 5px 0;
+    margin-top: 50px;
+    text-align: center;
+    font-size: 4rem;
+  }
+
+  .welcome-title h1 {
+    font-size: 3rem;
+  }
+
+  .home-char {
+    width: 100%;
+  }
+
+  .home-char img .part-char,
+  .part-comic {
+    margin-top: 20px;
+  }
+
+  .img-title img {
+    max-width: 100%;
+    height: 10vh;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .home-comic p {
+    margin: 20px;
+    font-size: 2vw;
+  }
+
+  .home-comic {
+    padding: 20px;
+    /* height: 100vh; */
+  }
+
+  .home-char p {
+    font-size: 1rem;
+  }
+
+  .img-title {
+    cursor: pointer;
+    gap: 20px;
+    width: 100%;
+    height: 20vh;
+  }
+
+  .description {
+    font-size: 0.8rem;
+    padding: 10px;
+    max-height: 6rem;
+    white-space: normal;
+  }
+
+  .home-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    margin: 20px 0;
+  }
+
+  .part-char,
+  .part-comic {
+    gap: 20px;
+  }
+}
+
+.p-title {
+  width: 100%;
+  height: 50px;
+  margin-bottom: 35px;
+  /* text-align: center; */
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 800px) {
+  .welcome-text h1 {
+    margin-top: 5px;
+    line-height: 2;
+  }
+  main {
+    margin-top: 0vh;
+  }
+  .welcome-text h1 {
+    font-size: 2rem;
+  }
+
+  .welcome-title h1 {
+    font-size: 2rem;
+  }
+
+  .part-char {
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+  }
+  .home-char {
+    gap: 40px;
+  }
+
+  .p-title {
+    text-align: center;
+    gap: 20px;
+    width: 100%;
+    overflow: hidden;
+    /* height: 6vh; */
+  }
+
+  .home-char img {
+    width: 45vw;
+    gap: 20px;
+  }
+
+  .img-title {
+    gap: 20px;
+    width: 100%;
+    height: 20vh;
+    margin-bottom: 20px;
+  }
+
+  .home-char p,
+  .home-comic p {
+    font-size: 0.8rem;
+    text-align: center;
+  }
+
+  .comics-images img {
+    width: 30vw;
+  }
+}
+
+.home-char img,
+.home-comic img,
+.carousel-image {
+  transition: transform 0.3s ease;
+}
+
+.home-char img:hover,
+.home-comic img:hover,
+.carousel-image:hover {
+  transform: scale(1.05);
+  animation: rainbow 2s linear infinite;
+}
+
+@keyframes rainbow {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(-360deg);
+  }
+}
+
+@keyframes haloAnimation {
+  0% {
+    box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0ff, 0 0 20px #0ff,
+      0 0 25px #0ff, 0 0 30px rgb(132, 255, 0), 0 0 35px #0ff;
+  }
+  100% {
+    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #0ff, 0 0 40px #0ff,
+      0 0 50px rgb(0, 102, 255), 0 0 60px rgb(217, 0, 255), 0 0 70px #0ff;
+  }
+}
+
+.home-char img,
+.home-comic img,
+.carousel-image {
+  animation: haloAnimation 1.5s alternate infinite;
+  height: 100%
+}

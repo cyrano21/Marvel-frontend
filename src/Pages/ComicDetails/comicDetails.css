@@ -1,0 +1,128 @@
+.App {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+.ComicDetails {
+  margin-top: 50px;
+  color: black;
+  margin-top: 150px;
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  padding: 20px;
+  background-color: #f8f8f892;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.image {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.image img {
+  max-width: 100%;
+  max-height: 400px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+.comics-section {
+  color: red;
+}
+
+.text {
+  margin-bottom: 20px;
+}
+
+.text p {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.ComicDetails span {
+  font-weight: bold;
+  font-size: 20px;
+}
+.ComicDetails p {
+  font-size: 20px;
+}
+.responsive-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.char-btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.return-home {
+  background-color: #ff0000;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.comic-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fav-btn-comic {
+  width: 10%;
+  background-color: yellow;
+  border: none;
+  padding: 5px 10px;
+
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.go_comics {
+  background-color: #ff0000;
+  border: none;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 2px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 50px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 500;
+}
+
+.comic-bloc {
+  margin-top: 100px;
+}
+
+.comic-bloc h1 {
+  margin-bottom: 15px;
+}
+
+.return-home:hover {
+  background-color: #e60000;
+}
+
+.go_comics:hover {
+  background-color: #e60000;
+}
